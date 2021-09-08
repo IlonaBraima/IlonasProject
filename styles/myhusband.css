@@ -18,61 +18,58 @@ body {
   max-width: 1200px;
   margin: 0 auto;
 }
+
 .container .col {
   width: 33.3333%;
   padding: 0 10px;
 }
+
 .container .col .item {
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
   background-color: white;
   transition: box-shadow 0.3s ease;
 }
+
 .container .col .item img {
   display: block;
   width: 100%;
   height: auto;
 }
+
 .container .col .item_desc {
   padding: 20px;
 }
+
 .container .col .item_heading {
   font-size: 22px;
   font-weight: 700;
   color: #f44336;
   margin-bottom: 15px;
 }
+
 .container .col .item_text {
   font-size: 15px;
   color: #131313;
   margin-bottom: 15px;
 }
+
 .container .col .item_tags {
   display: flex;
   flex-wrap: wrap;
 }
+
 .container .col .item_tag {
   font-size: 18px;
   font-weight: 500;
   color: darkorange;
   margin: 0 10px 10px 0;
 }
+
 .container .col .item:hover {
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
 }
 
-.flex-order {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  max-width: 1170px;
-  margin: 0 auto;
-}
-
-.single-post {
-  line-height: 1.4;
-  font-size: 1.2857142857rem;
-}
+/*# sourceMappingURL=myhusband.css.map */
 
 /*# sourceMappingURL=myhusband.css.map */

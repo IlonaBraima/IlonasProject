@@ -3,6 +3,14 @@
 <!DOCTYPE html>
 <html lang="en">
 
+    <?php
+        include('../uzdevumi/datubaze.php');
+        $upesSelect = "SELECT * FROM latvijasupes1";
+        $upesResult = $conn->query($upesSelect);
+        $iconSelect = "SELECT * FROM head_right";
+        $iconResult = $conn->query($iconSelect);
+    ?>
+
 <head>
 	<meta
 			charset="utf-8">
@@ -15,17 +23,10 @@
 	<link
 			href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap"
 			rel="stylesheet">
-	<link
-			href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
-			rel="stylesheet">
-	<link
-			rel="stylesheet"
-			href="style.css"
-			type="text/css">
+	<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../styles/style.css" type="text/css">
 
-	<title>
-		ILONA
-	</title>
+	<title>ILONA</title>
 
 </head>
 <body>
@@ -34,9 +35,7 @@
 
 	<div class="header">
 		<div class="logo">
-				<h1>
-					Ilona Braima
-				</h1>
+				<h1>Ilona Braima</h1>
 		</div>
 
 		<div class="menu">
@@ -74,18 +73,20 @@
 	</div>
 
 	<div class=head-r>
-			<div class="flex just-center">
-				<a class="icon" title="Facebook" href="https://www.facebook.com/ilonabraim/"><img src="images/fb.png" alt="Иллюстрация"></a>
-				<a class="icon" title="Instagram" href="https://www.instagram.com/ilona_braim/"><img src="images/ig.png" alt="Иллюстрация"></a>
-				<a class="icon" title="Skype" href="https://join.skype.com/invite/zUQumwuqujXp/"><img src="images/skype.png" alt="Иллюстрация"></a>
-				<a class="icon" title="Whatsapp" href="https://www.facebook.com/ilonabraim/"><img src="images/whatsapp.png" alt="Иллюстрация"></a>
-				<a class="icon" title="inbox" href="mailto:anoli2004@inbox.lv"><img src="images/inbox.png" alt="Иллюстрация"></a>
-				<a class="icon" title="Linkedin" href="https://www.linkedin.com/in/ilonabraim/"><img src="images/linkedin.png" alt="Иллюстрация"></a>
-			</div>
+        <div class="flex just-center">
+
+            <?php
+            while ($icon = $iconResult->fetch_assoc()) {
+            echo  '<a class="icon" title="' . $icon['title'] . '"href="' . $icon['adres'] . '">
+            <img src="../images/' . $icon['icon'] . '"></a>';
+            }
+            ?>
+        </div>
 	</div>
 
 	<div class="boxpage">
 		<div class="boxfirstpage">
+		<div class=colfirst>
 				<h1>
 					Моя жизнь пишется здесь…
 				</h1>
@@ -98,17 +99,11 @@
 			<div class="blockquote-3">
 				<p>
 					Всё, что со мной происходит - мой выбор!
-					<cite>
-						Ilona Braim
-					</cite>
+					<cite>Ilona Braim</cite>
 				</p>
 			</div>
 			<p>
-				<img src="images/ja8.jpg"
-					 width="300"
-					 height="auto"
-					 alt="Иллюстрация"
-					 align="left">
+				<img src="../images/ja8.jpg" width="300" height="auto" alt="Иллюстрация" align="left">
 			</p>
 				<p>
 					Это история о нас, о семье, о радости, о любви, жизни, грёзах и немножко о слёзах.
@@ -119,11 +114,7 @@
 					оттуда, где на свет решил появиться ребёнок, ныне уже подросток, Арсений Саныч.
 				</p>
 			<p>
-				<img src="images/mi.jpg"
-					 width="300"
-					 height="auto"
-					 alt="Иллюстрация"
-					 align="right">
+				<img src="../images/mi.jpg" width="300" height="auto" alt="Иллюстрация" align="right">
 			</p>
 				<p>
 					За это время произошло многое – встречи, развод, переезды, знакомства с огромным
@@ -142,11 +133,7 @@
 					удовольствие от результата.
 				</p>
 			<p>
-				<img src="images/mi6.jpg"
-					 width="300"
-					 height="auto"
-					 alt="Иллюстрация"
-					 align="left">
+				<img src="../images/mi6.jpg" width="300" height="auto" alt="Иллюстрация" align="left">
 			</p>
 				<p>
 					<b>МОЖНО</b> просто без условий, без предубеждений.
@@ -167,13 +154,29 @@
 			<div class="blockquote-3">
 				<p>
 					Живите для себя и будьте счастливы!!!
-					<cite>
-						Ilona Braim
-					</cite>
+					<cite>Ilona Braim</cite>
 				</p>
 			</div>
+			</div>
+
+    <div class="colfirst">
+        <div class="item">
+            <img src="../images/carousel4.jpg" alt="Иллюстрация"/>
+            <div class="item_desc">
+                <div class="item_heading">И чтоб могилки рядом</div>
+                <div class="item_text"> За последние годы я была на огромном количестве свиданий. Они были разными -
+                    планированными и спонтанными. Все чем-то отличались своими плюсами и минусами,
+                    но чаще одноразовыми. Думаю, что пора начать вести что-то вроде дневника.</div>
+                <div class="item_tags">
+                    <div class="item_tag">#мои100свиданий</div>
+                    <div class="item_tag">#отношения</div>
+                    <div class="item_tag">#секс</div>
+                </div>
+            </div>
+        </div>
 
 		</div>
+
 	</div>
 
 
