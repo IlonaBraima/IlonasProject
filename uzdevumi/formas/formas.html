@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="formas.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no, viewport-fit=cover"/>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+    <title>Ilonas formas</title>
+</head>
+<body>
+:]
+<form class="onlyform">
+    <label for="username">Ievadiet vārdu:</label><br/>
+    <input type="text" name="user" id="username" placeholder="Lietotājs:"><br/>
+
+    <label for="pass">Ievadiet paroli:</label><br/>
+    <input type="password" id="pass" name="pass"><br/>
+
+    <label for="digit">Ievadiet skaitli: </label><br/>
+    <input type="number" name="digit" id="digit" required=""><br/>
+
+    <fieldset>
+        <legend>Faila augšupielāde</legend>
+
+    </fieldset>
+
+    <fieldset>
+        <legend>Kādu alkoholu akceptē?:)</legend>
+        <input type="checkbox" name="alko1" value="1" disabled=""/>Vīns
+        <input type="checkbox" name="alko2" value="1"/>Konjaks
+        <input type="checkbox" name="alko3" value="1"/>Viskijs
+
+    </fieldset>
+    <fieldset>
+        Pievienot failu:<br/>
+        <input type="file" name="fail">
+        <br/>
+        Izvēlēties konvertējamā faila tipu:<br/>
+        .jpg <input type="radio" name="f-type" value="1" checked=""><br/>
+        .png <input type="radio" name="f-type" value="2"><br/>
+        .gif <input type="radio" name="f-type" value="3"><br/>
+    </fieldset>
+    <br/>
+
+    <label for="krasa_1">Izvēlies krasu:</label><br/>
+    <select name="krasa1" id="krasa_1"><br/>
+        <option value="red">Sarkans</option>
+        <option value="green">Zaļš</option>
+        <option value="blue">Zils</option>
+        <option value="grey">Pelēks</option>
+    </select><br/>
+    <label for="datums">Piegādes datums: </label><br/>
+    <input type="date" name="datums" id="datums"><br/>
+
+    <label for="krasa_2">Izvēlies otru krāsu:</label><br/>
+    <select name="krasa2" id="krasa_2" multiple="multiple" size=2">
+        <option value="red">Sarkans</option>
+        <option value="green">Zaļš</option>
+        <option value="blue">Zils</option>
+        <option value="grey">Pelēks</option>
+    </select>
+
+    <label for="krasa">Krāsa:</label><br/>
+    <input type="color" name="krasa" id="krasa">
+    <br/>
+    <label for="teksts02">Sacerējums:</label><br/>
+    <textarea name="teksts02" id="teksts02" rows="7" cols="25">
+    </textarea>
+
+    <fieldset>
+        <legend>Panelis</legend>
+
+        <input type="reset" name="reset" value="-Notīrīt-">
+        <input type="submit" name="submit" value="-Iesniegt-">
+
+    </fieldset>
+
+
+</form>
+</body>
+</html>

@@ -1,0 +1,50 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+
+body {
+  font: 14px/1.5 Roboto, sans-serif;
+  background-color: dimgrey;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+.onlyform {
+  display: block;
+  margin: 0 auto;
+  width: 90%;
+  color: antiquewhite;
+
+  fieldset {
+    padding: 15px;
+    margin: 0 0 20px 0;
+    border-style: dashed;
+    font-size: .8em;
+  }
+
+}
+
+#username {
+  color: #f44336;
+}
+  #username:hover {
+  background-color: #fa89a3;
+}
+
+  input[type=text] {
+  height: 50px;
+}
+
+ input[type=reset], [type=submit] {
+   width: 100px;
+   background-color: darkolivegreen;
+   box-shadow: 3px 3px 16px yellow;
+ }
+
+  input[type=reset]:hover, [type=submit]:hover {
+  box-shadow: 3px 3px 6px darkred;
+}

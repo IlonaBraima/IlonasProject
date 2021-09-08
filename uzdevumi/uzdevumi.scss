@@ -1,0 +1,341 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Marck+Script');
+
+body {
+  font: 16px/1.5 Roboto, sans-serif;;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+th {
+  border: 2px solid black;
+}
+
+td {
+  font-size: 15px;
+  padding: 2px;
+  border: 2px solid black;
+  text-align: right;
+}
+
+ul {
+  list-style-type: lower-greek;
+  margin-left: 20px;
+}
+
+.menuuzdevumi {
+  display: block;
+  padding-right: 30px;
+}
+
+.menuuzdevumi-link {
+  display: block;
+  height: 60px;
+  align-items: center;
+  text-align: center;
+  padding: 30px 20px;
+  font: 35px "Roboto Light";
+  color: black;
+  transition: color .3s ease;
+}
+
+
+
+.menuuzdevumi-link:hover {
+  color: #fa89a3;
+}
+
+.pasn-main-heading{
+  text-align: center;
+  margin-bottom: 10px;
+  color: darkorange;
+}
+
+.pasn-section{
+  margin-bottom: 10px;
+}
+
+.pasn-section.dark .pasniedzeji {
+  color: antiquewhite;
+  background: black;
+}
+
+.pasn-heading {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: antiquewhite;
+}
+
+.pasniedzeji {
+  list-style-image: url("../images/book.png");
+  color: antiquewhite;
+}
+
+.small-text {
+  font-size: .7em;
+}
+
+.pasn-grey {
+  margin-left: 70px;
+  margin-right: 70px;
+}
+
+.table-program {
+  margin: 10px;
+  border-collapse: collapse;
+  width: 100%;
+  height: 100px;
+  background-color: grey;
+
+}
+
+.td-program {
+  padding-top: 15px;
+  font-size: 10px;
+  text-align: left;
+  color: yellow;
+}
+
+.td-program2 {
+  padding: 1px 20px 1px;
+  margin: 10px 10px;
+  text-align: left;
+  background-color: yellow;
+  color: red;
+
+}
+
+.th-program {
+  background-color: white;
+  color: red;
+}
+
+.table-pr {
+  margin: 10px;
+  border-collapse: collapse;
+  width: 100%;
+  height: 100px;
+  background-color: grey;
+}
+
+.rezultat p {
+  margin-left: 30px;
+  width: 40%;
+  text-align: justify;
+  background: black;
+  color: #FFF4ED;
+  border-left: 5px solid orange;
+  font-size: x-small;
+  padding: 5px;
+
+}
+
+.row:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.row {
+  border: 1px;
+}
+
+.left {
+  padding: 1px;
+  width: 25%;
+  float: left;
+
+}
+
+.center {
+  padding: 1px;
+  width: 50%;
+  float: left;
+}
+
+.right {
+  width: 25%;
+  float: left;
+}
+
+.mb {
+  text-align: center;
+  width: 33.333333%;
+  float: left;
+  background-color: lightgrey;
+  margin-bottom: 30px;
+}
+
+.mb a {
+  text-align: center;
+  display: block;
+  text-decoration: none;
+  font-size: 30px;
+  color: slategrey;
+  padding: 10px 5px;
+}
+
+.mb a:hover {
+  background-color: #3CA1D9;
+  color: #FFF4ED;
+}
+
+.row h1 {
+  text-align: center;
+  margin: 30px 0 30px 0;
+  font-size: 50px;
+  color: #3CA1D9;
+}
+
+body.upes {
+  font: 12px/1.5 Roboto, sans-serif;
+  background-image: none;
+  background-color: white;
+}
+
+body.maniuzdevumi {
+  background-color: grey;
+}
+
+body.daugava {
+  font: 20px/1.5 Roboto, sans-serif;
+  background-image: url("../images/Daugava1.jpg");
+}
+
+.daugava h1 {
+  font: 40px "Roboto Thin", sans-serif;
+  color: forestgreen;
+  margin-bottom: 20px;
+}
+
+.upes-name {
+  float: left;
+  width: 90%;
+}
+
+.upes-name h1 {
+  text-align: left;
+}
+
+.upes-name h1:hover{
+  text-shadow: 3px 3px 5px steelblue, -3px -3px 5px yellow;
+}
+
+.upes-back {
+  float: left;
+  width: 10%;
+}
+
+.daugavaimg img {
+  float: right;
+  width: 33%;
+  height: auto;
+  border-top-left-radius: 40%;
+  box-shadow: 5px 10px 10px grey;
+  padding: 10px 5px;
+  margin-top: 20px;
+}
+
+.iconhome img {
+  width: 40px;
+  height: auto;
+  text-align: right;
+}
+
+
+
+body.gauja {
+  font: 20px/1.5 Roboto, sans-serif;
+  background-image: none;
+  background-color: lightgray;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .left, .center, .right, .mb {
+    width: 100%;
+  }
+  .head-r {
+    display: none;
+  }
+
+  .head-l {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: none;
+    height: 30px;
+    font-size: 10px;
+    padding: 0 20px;
+    width: auto;
+    right: 0;
+  }
+
+  .linker:link, .linker:visited {
+    font-size: 10px;
+    color: grey;
+    text-decoration: none;
+  }
+}
+
+.menuuzd {
+
+    margin: 0;
+    padding: 0;
+    font-family: 'Marck Script', sans-serif;
+    font-size: 40px;
+
+  ul {
+    position:absolute;
+    top: 15%;
+    left: 30%;
+    margin: 0;
+    padding: 0;
+    width: 700px;
+  }
+
+  ul li {
+    list-style: none;
+    border-top: 1px solid #131313;
+    border-bottom: 1px solid #131313;
+    margin: -1px 0;
+    transition: 0.5s;
+  }
+
+  ul li a {
+    display: block;
+    border-right: 1px solid #131313;
+    text-decoration: none;
+    color: #131313;
+  }
+
+  ul li a span {
+    position: relative;
+    display: inline-block;
+  }
+
+  ul li a span:nth-child(1) {
+    width: 30px;
+    text-align: center;
+    border-left: 1px solid #131313;
+    border-right: 1px solid #131313;
+    padding: 10px;
+    transition: 0.5s;
+    color: #131313;
+    font-size: 20px;
+    background: #f44336;
+  }
+
+  ul li a span:nth-child(2) {
+    padding: 10px;
+  }
+
+}
+
