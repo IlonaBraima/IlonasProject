@@ -12,17 +12,12 @@
     ?>
 
 <head>
-	<meta
-			charset="utf-8">
-	<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0 user-scalable=no, viewport-fit=cover"/>
-	<link
-			href="https://fonts.googleapis.com/css2?family=Roboto@1&display=swap"
-			rel="stylesheet">
-	<link
-			href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap"
-			rel="stylesheet">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no,
+	 viewport-fit=cover" />
+
+	<link href="https://fonts.googleapis.com/css2?family=Roboto@1&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="../styles/style.css" type="text/css">
 
@@ -30,7 +25,6 @@
 
 </head>
 <body>
-<div>
 
 
 	<div class="header">
@@ -40,34 +34,19 @@
 
 		<div class="menu">
 			<div class="menu-item">
-				<a class="menu-link"
-				   href="uzdevumi/maniuzdevumi.html">
-					Mājas uzdevums
-				</a>
+			    <a class="menu-link" href="uzdevumi/maniuzdevumi.html">Mājas uzdevums</a>
 			</div>
 			<div class="menu-item">
-				<a class="menu-link"
-				   href="date.html">
-					Проект: Мои 100 свиданий
-				</a>
+				<a class="menu-link" href="date.html">Проект: Мои 100 свиданий</a>
 			</div>
 			<div class="menu-item">
-				<a class="menu-link"
-				   href="2index.html">
-					Проект: Дети
-				</a>
+				<a class="menu-link" href="2index.html">Проект: Дети</a>
 			</div>
 			<div class="menu-item">
-				<a class="menu-link"
-				   href="/QA.html">
-					Проект: QA/Software tester
-				</a>
+				<a class="menu-link" href="/QA.html">Проект: QA/Software tester</a>
 			</div>
 			<div class="menu-item">
-				<a class="menu-link"
-				   href="mybodylove.html">
-					Проект: Моё тело
-				</a>
+				<a class="menu-link" href="mybodylove.html">Проект: Моё тело</a>
 			</div>
 		</div>
 	</div>
@@ -83,28 +62,21 @@
             ?>
         </div>
 	</div>
-
-	<div class="boxpage">
-		<div class="boxfirstpage">
-		<div class=colfirst>
-				<h1>
-					Моя жизнь пишется здесь…
-				</h1>
+    <div class="container">
+		<div class="col1">
+				<h1>Моя жизнь пишется здесь…</h1>
 				<p>Можно растить на лоджии помидоры и огурцы, но вырастить голубёнка, можно сходить на
 					встречу и выйти замуж, в жизни возможно всё, самое важное стремиться
 					<b>жить здесь и сейчас</b> - именно этому я и учусь, именно поэтому важно помнить
 					о лучшем, чтобы создавать историю в настоящем.
 				</p>
-
 			<div class="blockquote-3">
 				<p>
 					Всё, что со мной происходит - мой выбор!
 					<cite>Ilona Braim</cite>
 				</p>
 			</div>
-			<p>
 				<img src="../images/ja8.jpg" width="300" height="auto" alt="Иллюстрация" align="left">
-			</p>
 				<p>
 					Это история о нас, о семье, о радости, о любви, жизни, грёзах и немножко о слёзах.
 					Это история о том, как важно научиться жить не вопреки, а только во благо себе любимым.
@@ -113,9 +85,7 @@
 					Моя <b>личная история</b>, как блогера, началась давно, в 2010 году и ведёт свой отсчет
 					оттуда, где на свет решил появиться ребёнок, ныне уже подросток, Арсений Саныч.
 				</p>
-			<p>
 				<img src="../images/mi.jpg" width="300" height="auto" alt="Иллюстрация" align="right">
-			</p>
 				<p>
 					За это время произошло многое – встречи, развод, переезды, знакомства с огромным
 					количеством людей, потери друзей, обрыв связи с родственниками, болезни, исполнение
@@ -132,9 +102,7 @@
 					Каждый день мы делаем выбор - <b>свой выбор!</b> Берём за него ответсвенность и получаем
 					удовольствие от результата.
 				</p>
-			<p>
 				<img src="../images/mi6.jpg" width="300" height="auto" alt="Иллюстрация" align="left">
-			</p>
 				<p>
 					<b>МОЖНО</b> просто без условий, без предубеждений.
 				</p>
@@ -156,32 +124,57 @@
 					Живите для себя и будьте счастливы!!!
 					<cite>Ilona Braim</cite>
 				</p>
-			</div>
-			</div>
+    	    </div>
+        </div>
 
-    <div class="colfirst">
-        <div class="item">
-            <img src="../images/carousel4.jpg" alt="Иллюстрация"/>
-            <div class="item_desc">
-                <div class="item_heading">И чтоб могилки рядом</div>
-                <div class="item_text"> За последние годы я была на огромном количестве свиданий. Они были разными -
-                    планированными и спонтанными. Все чем-то отличались своими плюсами и минусами,
-                    но чаще одноразовыми. Думаю, что пора начать вести что-то вроде дневника.</div>
-                <div class="item_tags">
-                    <div class="item_tag">#мои100свиданий</div>
-                    <div class="item_tag">#отношения</div>
-                    <div class="item_tag">#секс</div>
+        <div class="col">
+            <div class="item">
+                <img src="../images/carousel4.jpg" alt="Иллюстрация"/>
+                <div class="item_desc">
+                    <div class="item_heading">И чтоб могилки рядом</div>
+                    <div class="item_text"> За последние годы я была на огромном количестве свиданий. Они были разными -
+                        планированными и спонтанными. Все чем-то отличались своими плюсами и минусами,
+                        но чаще одноразовыми. Думаю, что пора начать вести что-то вроде дневника.</div>
+                    <div class="item_tags">
+                        <div class="item_tag">#мои100свиданий</div>
+                        <div class="item_tag">#отношения</div>
+                        <div class="item_tag">#секс</div>
+                    </div>
                 </div>
             </div>
         </div>
-
-		</div>
-
-	</div>
-
-
-
-
-</div>
+        <div class="col">
+            <div class="item">
+                    <img src="../images/carousel2.jpg" alt="Иллюстрация"/>
+                    <div class="item_desc">
+                        <div class="item_heading">Знакомьтесь: СЕ И СЁ</div>
+                        <div class="item_text">
+                                Насколько бы хорошо я не разбиралась в материнстве, насколько хорошо не понимала бы своих
+                                детей, всегда найдутся грани и стороны, где я теряюсь, поэтому никогда не может быть
+                                много информации о том, как понимать ребенка и себя, как мамы.</div>
+                        <div class="item_tags">
+                            <div class="item_tag">#воспитание</div>
+                            <div class="item_tag">#дети</div>
+                            <div class="item_tag">#дневникразвития</div>
+                        </div>
+                    </div>
+            </div>
+            <div class="item">
+                <img src="../images/2012.jpg" alt="Иллюстрация"/>
+                <div class="item_desc">
+                <div class="item_heading">Я вся такая несуразная</div>
+                <div class="item_text"> На этой страничке я расскажу вам, как скачет мой вес +-20 кг,
+                    как растёт моя нога 43 размера (раз в пять лет
+                    +1 размер), как я занимаюсь спортом, хожу по врачам - болею и лечусь.
+                    Расскажу обо всём, что касается моего тела</div>
+                <div class="item_tags">
+                    <div class="item_tag">#вес</div>
+                    <div class="item_tag">#здоровье</div>
+                    <div class="item_tag">#рост</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
+

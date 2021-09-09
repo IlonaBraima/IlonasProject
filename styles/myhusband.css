@@ -20,7 +20,7 @@ body {
 }
 
 .container .col {
-  width: 33.3333%;
+  width: 50%;
   padding: 0 10px;
 }
 
@@ -70,6 +70,13 @@ body {
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
 }
 
+@media only screen and (max-width: 600px) {
+  .container {
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
 /*# sourceMappingURL=myhusband.css.map */
 
 /*# sourceMappingURL=myhusband.css.map */

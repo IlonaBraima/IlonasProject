@@ -62,13 +62,18 @@
                     while($rinda_img=$result_img->fetch_assoc()){
                     echo '<div class="daugavaimg"><img class="z" src="../images/' .$rinda_img["photo"]. '" alt="Фото1"
                     title="Daugava" /></div>';
-
                     }
                     ?>
-            <div class="right">
-                <button onclick="test()">Mainam upi!</button>
-            </div>
+                    </div>
+            <div class="right"></div>
     </div>
+        <div class="row">
+                <div class="left"></div>
+                    <div class="center">
+                      <button onclick="left'()"><<-----</button><button onclick="right'()"><<-----</button>
+                    </div>
+                <div class="right"></div>
+        </div>
 
 <script src="script.js"></script>
 
