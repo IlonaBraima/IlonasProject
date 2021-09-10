@@ -2,9 +2,12 @@
 <html lang="en">
 
 <?php
-
         include('datubaze.php');
         $upes_id=$_GET['id'];
+        if($upes_id<1) {
+        $upes_id=1;
+        }
+
         $select="SELECT id, nosaukums, apraksts FROM latvijasupes1 WHERE id=".$upes_id;
         $select_img="SELECT id, name, photo FROM upes_img WHERE upes_id=".$upes_id;
         $result=$conn->query($select);
@@ -12,6 +15,7 @@
         $rinda=$result->fetch_assoc();
 
 ?>
+
 
 
 <head>
@@ -70,7 +74,7 @@
         <div class="row">
                 <div class="left"></div>
                     <div class="center">
-                      <button onclick="left'()"><<-----</button><button onclick="right'()"><<-----</button>
+                      <button onclick="left()">to left</button><button onclick="right()">to right</button>
                     </div>
                 <div class="right"></div>
         </div>

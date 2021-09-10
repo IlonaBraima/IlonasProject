@@ -2,26 +2,32 @@ let name, bildes;
 //name=dokument.getElementById('upe').innerHTML;
 namePlus=document.getElementById('upe');
 bildes=document.getElementsByClassName('z');
+
 let daugavaimg=document.getElementsByClassName('daugavaimg');
-let x=0, max=daugavaimg.length;
+let x=0,
+    max=daugavaimg.length;
 
 for (var i = 0; i < max; i++) {
     if (i>2) {
-        daugavaimg[i].style.display="none";}
+        daugavaimg[i].style.display="none";
+    }
 }
 
 function left() {
-    if (x+3<max){
+    if (x+3<max) {
+        console.log(1);
         daugavaimg[x].style.display="none";
         daugavaimg[x+3].style.display="block";
-    x++;}
+        x++;
+    }
 }
 
 function right() {
-    if (x+3<max){
-        daugavaimg[x].style.display="none";
-        daugavaimg[x+3].style.display="block";
-        x++;}
+    if (x>0) {
+        daugavaimg[x+2].style.display="none";
+        daugavaimg[x-1].style.display="block";
+        x--;
+    }
 }
 
 function show() {

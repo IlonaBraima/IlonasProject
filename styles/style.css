@@ -24,6 +24,7 @@ body {
     width: 1800px;
     margin: 0 auto;
     background-color: rgba(245, 245, 245, .8)
+
 }
 
 .container .col1 {
@@ -31,10 +32,12 @@ body {
     margin: 20px 20px 0 20px;
     padding: 0 10px;
     background-color: white;
+    border-radius: 30px;
 }
 
 .container .col1 img {
     display: block;
+    border-radius: 30px;
     margin: 2%;
     padding: 1%;
     background: linear-gradient(to right, #ffd1dc 0%, #ffb8c9 100%);
@@ -50,17 +53,19 @@ body {
     margin-bottom: 20px;
     background-color: white;
     transition: box-shadow 0.3s ease;
+    border-radius: 30px;
 }
 .container .col .item img {
     display: block;
     width: 100%;
     height: auto;
+    border-radius: 30px;
 }
 .container .col .item_desc {
     padding: 20px;
 }
 .container .col .item_heading {
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 700;
     color: #f44336;
     margin-bottom: 15px;
@@ -75,7 +80,7 @@ body {
     flex-wrap: wrap;
 }
 .container .col .item_tag {
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 500;
     color: darkorange;
     margin: 0 10px 10px 0;
@@ -177,11 +182,11 @@ body {
 
 .header {
     display: flex;
+    border-radius: 30px;
     justify-content: space-between;
     align-items: center;
     height: 100px;
-    width: 100%;
-    margin: 2%;
+    margin: 1% 2% 1% 2%;
     padding: 1%;
     background: linear-gradient(to right, #ffd1dc 0%, #ffb8c9 90%);
 
@@ -483,15 +488,40 @@ blockquote cite {
     }
 }
 
-@media only screen and (min-width: 1450px) and (max-width: 1799px) {
+@media only screen and (min-width: 1365px) and (max-width: 1799px) {
     .container {
-        max-width: 1450px;
+        max-width: 1365px;
         margin: 0 auto;
 
     }
+
+    .container .col {
+        width: 18%;
+    }
+    .container .col .item_desc {
+        padding: 10px;
+    }
+
+    .container .col .item_heading {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
+    .container .col .item_text {
+        font-size: 10px;
+        color: darkred;
+        margin-bottom: 10px;
+    }
+    .container .col .item_tags {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .container .col .item_tag {
+        font-size: 12px;
+        font-weight: 500;
+    }
 }
 
-@media only screen and (max-width: 1449px) and (min-width: 1100px) {
+@media only screen and (max-width: 1364px) and (min-width: 1100px) {
     .container {
         max-width: 1099px;
         margin: 0 auto;
