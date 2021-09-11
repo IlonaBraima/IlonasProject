@@ -1,0 +1,348 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: 16px/1.5 Roboto, sans-serif;
+  background-image: url("../images/mi1.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+
+.boxpagechildren {
+
+  width: 1700px;
+  margin: 0 auto;
+  background-color: rgba(245, 245, 245, .8);
+
+
+  p {
+    font: 16px/1.5 Roboto;
+    color: #131313;
+    margin: 15px;
+  }
+
+  h1 {
+    font: 30px/1.5 Roboto;
+    color: dodgerblue;
+    margin: 30px;
+    padding: 10px;
+    text-align: center;
+  }
+
+  h3 {
+    font: 20px/1.5 Roboto;
+    font-style: initial;
+    color: dodgerblue;
+    margin: 15px;
+    background-color: rgba(135, 206, 235, .4);
+  }
+
+  mark {
+    background-color: skyblue;
+  }
+
+  img {
+    flex-direction: row;
+    width: 30%;
+    margin: 15px;
+    padding: 3px;
+    background: linear-gradient(to right, skyblue 0%, dodgerblue 100%);
+    opacity: .9
+  }
+}
+
+.header {
+  display: flex;
+  border-radius: 30px;
+  justify-content: space-between;
+  align-items: center;
+  width: 1800px;
+  height: 100px;
+  margin: 1% 2% 1% 2%;
+  padding: 1%;
+
+}
+
+.menu-link {
+  display: flex;
+  height: 40px;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  font: 20px "Roboto Light";
+  color: dodgerblue;
+  transition: color .5s ease;
+  background-color: rgba(135, 206, 235, .4);
+  border-radius: 30px;
+
+  &:hover {
+    color: blue;
+  }
+}
+
+.logo {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  color: skyblue;
+  padding-left: 50px;
+  padding-top: 30px;
+
+  h1 {
+  font: 70px/0.5 Style Script, cursive;
+ }
+
+ .menu {
+  display: flex;
+  padding-right: 20px;
+  }
+}
+
+.head-r {
+  top: 0;
+  right: -100vh;
+  width: 100vh;
+  transform: rotate(90deg);
+  transform-origin: top left;
+  height: 60px;
+  position: fixed;
+  text-align: center;
+  font-size: 30px;
+  padding-top: 30px;
+  z-index: 5;
+}
+
+.head-l {
+  bottom: 0;
+  left: 0;
+  width: 100vh;
+  transform: rotate(-90deg) translateY(100%);
+  transform-origin: left bottom;
+  height: 60px;
+  position: fixed;
+  text-align: center;
+  font-size: 30px;
+  padding-top: 30px;
+  z-index: 5;
+}
+
+.just-center {
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+.flex {
+  display: flex;
+}
+
+.icon {
+  display: block;
+  width: 22px;
+  height: 22px;
+  margin: 0 5px;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    opacity: 0.4;
+  }
+}
+
+.linker:link, .linker:visited
+{
+  font-size: 33px;
+  color: grey;
+  text-decoration: none;
+}
+
+.linkers:hover {
+  font-size: 22px;
+  color: darkred;
+}
+
+.table {
+  border-style: ridge;
+  box-sizing: content-box;
+  width: 600px;
+  text-align: center;
+  margin: 0 auto;
+
+ th {
+  border: 4px solid grey;
+  }
+
+ td {
+  border: 4px solid grey;
+  }
+}
+
+ blockquote { /*цитата*/
+  margin: 15px;
+  background: rgba(255, 244, 237, .3);
+  padding: 40px;
+  position: relative;
+  text-align: center;
+  font: 14px/1.5 "Roboto Thin", sans-serif;
+
+
+ &:before, &:after {
+  font-size: 45px;
+  color: dodgerblue;
+  position: absolute;
+  height: 2px;
+  left: 40px;
+  right: 40px;
+  line-height: .5;
+  background: linear-gradient(to right, skyblue 45%, transparent 45%, transparent 55%, dodgerblue 55%);
+  font-family: serif;
+  }
+  &:before {
+  content: "\201C";
+  top: 30px;
+  }
+ &:after {
+  content: "\201D";
+  bottom: 30px;
+
+ }
+
+  blockquote footer {
+  margin-bottom: 1em;
+ }
+ blockquote cite {
+  font-style: italic; /*цитата*/
+ }
+}
+
+
+
+@media only screen and (min-width: 1800px) {
+  .boxpagechildren  {
+    max-width: 1700px;
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1700px) {
+
+  .boxpagechildren {
+    width: 1200px;
+
+  }
+}
+
+@media only screen and (max-width: 1199px) and (min-width: 600px) {
+
+  .boxpagechildren {
+    max-width: 599px;
+  }
+  .boxpagechildren img {
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    background: none;
+    opacity: 0.9;
+  }
+}
+
+@media only screen and (max-width: 599px) and (min-width: 320px) {
+
+  .boxpagechildren {
+    max-width: 320px;
+
+    img {
+      display: flex;
+      flex-wrap: wrap;
+      width: 60%;
+    }
+
+    p {
+      font: 12px/1.25 Roboto;
+    }
+
+    h1 {
+      font: 14px/1.5 Roboto;
+      padding: 5px;
+      margin: 0;
+    }
+
+    h3 {
+      font: 12px/1.5 Roboto;
+      color: dodgerblue;
+      margin: 10px;
+      background-color: rgba(135, 206, 235, .1);
+    }
+  }
+
+  .table {
+    width: 70px;
+    font-size: 10px;
+
+    th {
+      border: 1px solid grey;
+    }
+
+    td {
+      border: 1px solid grey;
+    }
+  }
+
+  .head-r {
+    height: auto;
+    padding-top: 0;
+  }
+
+  .head-l {
+    height: auto;
+    padding-top: 0;
+
+    a {
+      display: block;
+    }
+  }
+
+  .icon {
+    width: 11px;
+    height: 11px;
+    margin: 0 5px 0 0;
+  }
+
+  .linker:link, .linker:visited {
+    font-size: 13px;
+  }
+
+  .header {
+     display: flex;
+     border-radius: 30px;
+     width: 300px;
+     height: 80px;
+     margin: 0;
+     padding: 0;
+   }
+
+  .menu-link {
+    height: 20px;
+    padding: 0 10px;
+    font: 10px "Roboto Light";
+  }
+
+  .logo {
+    height: 50%;
+    padding-left: 0;
+    padding-top: 0;
+
+    h1 {
+      font: 30px/0.5 Style Script, cursive;
+    }
+
+    .menu {
+      padding-right: 10px;
+    }
+  }
+}
