@@ -33,7 +33,7 @@
     </div>
 
     <div class=head-l>
-        <div><a class="linker" href="../pages/index.php">HOME</a></div>
+        <div><a class="linker" href="../index.php">HOME</a></div>
     </div>
     <div class="row">
         <h1>LATVIJAS UPES</h1>

@@ -38,12 +38,7 @@
                     </div>
 
                         <div class="upes-back">
-                            <a class="iconhome"
-                                title="HOME"
-                                href="Upes.php">
-                                <img src="../images/home.png"
-                                alt="Home">
-                            </a>
+                            <a href="upes.php"><span class="iconhome fas fa-home"></span></a>
                         </div>
                 </div>
             <div class="right"></div>
@@ -60,15 +55,18 @@
                 </div>
              <div class="right"></div>
     </div>
-        <div class="row">
-                <div class="left"></div>
-                    <div class="center">
-                    <div class="slider_control"
-                      <button onclick="left()"><span class="far slider-button slider-button--left fa-hand-point-left"></span></button>
-                      <button onclick="right()"><span class="far slider-button slider-button--right fa-hand-point-right"></span></button>
-                    </div>
-                <div class="right"></div>
-        </div>
+    <div class="row">
+            <div class="left"></div>
+                <div class="center slider_control">
+                          <button onclick="left()" class="slider-button slider-button--left">
+                            <span class="far fa-hand-point-left"></span>
+                          </button>
+                          <button onclick="right()" class= "slider-button slider-button--right">
+                            <span class="far fa-hand-point-right"></span>
+                          </button>
+                </div>
+            <div class="right"></div>
+    </div>
     <div class="row">
             <div class="left"></div>
                 <div class="center">

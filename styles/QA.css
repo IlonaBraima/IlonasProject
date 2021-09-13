@@ -135,7 +135,7 @@ body {
   display: flex;
   justify-content: space-between;
   height: 100px;
-  background: url("images/bug4.jpg");
+  background: url("../images/qaimages/bug4.jpg");
   background-repeat: repeat-x;
   background-size: contain;
 }
@@ -169,4 +169,4 @@ body {
   display: block;
 }
 
-/*# sourceMappingURL=QA.styles.map */
+/*# sourceMappingURL=QA.css.map */

@@ -26,7 +26,7 @@
 	<div class="header">
 		<div class="logo"><h1>Ilona Braima</h1></div>
 		<div class="menu"><div class="menu-item">
-					<a class="menu-link" href="index.php">На главную</a>
+					<a class="menu-link" href="../index.php">На главную</a>
 				</div>
 				<div class="menu-item">
 					<a class="menu-link" href="mybodylove.php">Проект: МОЁ ТЕЛО</a>
@@ -49,7 +49,7 @@
 
 	<div class=head-l>
 				<div>
-					<a class="linker" href="index.php">HOME</a>
+					<a class="linker" href="../index.php">HOME</a>
 				</div>
 	</div>
 

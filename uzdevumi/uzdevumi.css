@@ -175,6 +175,11 @@ ul {
   width: 50%;
   float: left;
 }
+.center.slider_control {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+}
 
 .right {
   width: 25%;
@@ -259,10 +264,12 @@ body.daugava {
   margin-top: 20px;
 }
 
-.iconhome img {
-  width: 40px;
+.iconhome {
+  font-size: 40px;
   height: auto;
-  text-align: right;
+  text-align: left;
+  color: green;
+  margin: 30px 0 0 0;
 }
 
 body.gauja {
@@ -330,7 +337,7 @@ body.gauja {
   display: inline-block;
 }
 .menuuzd ul li a span:nth-child(1) {
-  width: 30px;
+  width: 50px;
   text-align: center;
   border-left: 1px solid #131313;
   border-right: 1px solid #131313;
@@ -345,10 +352,21 @@ body.gauja {
 }
 
 .slider-button {
-  font-size: 30px;
+  font-size: 40px;
   color: green;
+  background: transparent;
+  border: none;
 }
+/*.slider_control {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
+}*/
 @media only screen and (max-width: 899px) and (min-width: 230px) {
+  .daugava {
+    margin: 20px 20px 20px 20px;
+  }
+
   .daugavaimg img {
     width: 100%;
     height: auto;

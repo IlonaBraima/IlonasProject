@@ -25,7 +25,7 @@
 	</div>
 	<div class="menu">
 		<div class="menu-item">
-			<a class="menu-link" href="index.php">Вернуться на главную</a>
+			<a class="menu-link" href="../index.php">Вернуться на главную</a>
 		</div>
 		<div class="menu-item">
 			<a class="menu-link" href="date.php">Проект: Мои 100 свиданий</a>
@@ -46,7 +46,7 @@
 
 <div class=head-l>
 	<div>
-		<a class="linker" href="index.html">HOME</a>
+		<a class="linker" href="../index.html">HOME</a>
 	</div>
 </div>
 

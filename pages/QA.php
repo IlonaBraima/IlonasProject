@@ -14,12 +14,12 @@
 <body>
         <div class="header">
             <div class="menu">
-                <div class="menu-item"><a class="menu-link" href="firstpage.php">ABOUT MI</a></div>
+                <div class="menu-item"><a class="menu-link" href="../index.php">ABOUT MI</a></div>
             </div>
         </div>
         <div class="boxpageqa">
             <div class="row first">
-                <div class="left"><a class="logo" href="firstpage.php">Ilona Braima</a></div>
+                <div class="left"><a class="logo" href="../index.php">Ilona Braima</a></div>
                     <div class="center">
                         <h1>Проект тестировщика ПО</h1>
                         <table>

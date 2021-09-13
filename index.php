@@ -4,7 +4,7 @@
 <html lang="en">
 
     <?php
-        include('../uzdevumi/datubaze.php');
+        include('uzdevumi/datubaze.php');
         $upesSelect = "SELECT * FROM latvijasupes1";
         $upesResult = $conn->query($upesSelect);
         $iconSelect = "SELECT * FROM head_right";
@@ -18,7 +18,7 @@
 
 	<link href="https://fonts.googleapis.com/css2?family=Roboto@1&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="../styles/style.css" type="text/css">
+	<link rel="stylesheet" href="styles/style.css" type="text/css">
 
 	<title>ILONA</title>
 
@@ -33,22 +33,22 @@
 
 		<div class="menu">
 			<div class="menu-item">
-			    <a class="menu-link" href="../uzdevumi/maniuzdevumi.html">Mājas uzdevums</a>
+			    <a class="menu-link" href="uzdevumi/maniuzdevumi.html">Mājas uzdevums</a>
 			</div>
 			<div class="menu-item">
-				<a class="menu-link" href="date.php">Проект: Мои 100 свиданий</a>
+				<a class="menu-link" href="pages/date.php">Проект: Мои 100 свиданий</a>
 			</div>
 			<div class="menu-item">
-				<a class="menu-link" href="children.php">Проект: Дети</a>
+				<a class="menu-link" href="pages/children.php">Проект: Дети</a>
 			</div>
 			<div class="menu-item">
-				<a class="menu-link" href="QA.php">Проект: QA/Software tester</a>
+				<a class="menu-link" href="pages/QA.php">Проект: QA/Software tester</a>
 			</div>
 			<div class="menu-item">
-            				<a class="menu-link" href="honest_relationship.html">Проект: Честные отношения</a>
+            				<a class="menu-link" href="pages/honest_relationship.html">Проект: Честные отношения</a>
             			</div>
 			<div class="menu-item">
-				<a class="menu-link" href="mybodylove.php">Проект: Моё тело</a>
+				<a class="menu-link" href="pages/mybodylove.php">Проект: Моё тело</a>
 			</div>
 		</div>
 	</div>
@@ -59,7 +59,7 @@
             <?php
             while ($icon = $iconResult->fetch_assoc()) {
             echo  '<a class="icon" title="' . $icon['title'] . '"href="' . $icon['adres'] . '">
-            <img src="../images/' . $icon['icon'] . '"></a>';
+            <img src="images/' . $icon['icon'] . '"></a>';
             }
             ?>
         </div>
@@ -78,7 +78,7 @@
 					<cite>Ilona Braim</cite>
 				</p>
 			</div>
-				<img src="../images/ja8.jpg" width="300" height="auto" alt="Иллюстрация" align="left">
+				<img src="images/ja8.jpg" width="300" height="auto" alt="Иллюстрация" align="left">
 				<p>
 					Это история о нас, о семье, о радости, о любви, жизни, грёзах и немножко о слёзах.
 					Это история о том, как важно научиться жить не вопреки, а только во благо себе любимым.
@@ -87,7 +87,7 @@
 					Моя <b>личная история</b>, как блогера, началась давно, в 2010 году и ведёт свой отсчет
 					оттуда, где на свет решил появиться ребёнок, ныне уже подросток, Арсений Саныч.
 				</p>
-				<img src="../images/mi.jpg" width="300" height="auto" alt="Иллюстрация" align="right">
+				<img src="images/mi.jpg" width="300" height="auto" alt="Иллюстрация" align="right">
 				<p>
 					За это время произошло многое – встречи, развод, переезды, знакомства с огромным
 					количеством людей, потери друзей, обрыв связи с родственниками, болезни, исполнение
@@ -104,7 +104,7 @@
 					Каждый день мы делаем выбор - <b>свой выбор!</b> Берём за него ответсвенность и получаем
 					удовольствие от результата.
 				</p>
-				<img src="../images/mi6.jpg" width="300" height="auto" alt="Иллюстрация" align="left">
+				<img src="images/mi6.jpg" width="300" height="auto" alt="Иллюстрация" align="left">
 				<p>
 					<b>МОЖНО</b> просто без условий, без предубеждений.
 				</p>
@@ -131,7 +131,7 @@
 
         <div class="col">
             <div class="item">
-                <img src="../images/carousel4.jpg" alt="Иллюстрация"/>
+                <img src="images/carousel4.jpg" alt="Иллюстрация"/>
                 <div class="item_desc">
                     <div class="item_heading">И чтоб могилки рядом</div>
                     <div class="item_text"> За последние годы я была на огромном количестве свиданий. Они были разными -
@@ -146,7 +146,7 @@
                 </div>
             </div>
              <div class="item">
-                        <img src="../images/ja1.jpg" alt="Иллюстрация"/>
+                        <img src="images/ja1.jpg" alt="Иллюстрация"/>
                         <div class="item_desc">
                             <div class="item_heading">Портфолио QA тестировщика</div>
                             <div class="item_text"> Cфера IT безгранична и интересна, поэтому после изучения
@@ -164,7 +164,7 @@
               </div>
 
               <div class="item">
-                          <img src="../images/3.jpg" alt="Иллюстрация"/>
+                          <img src="images/3.jpg" alt="Иллюстрация"/>
                           <div class="item_desc">
                               <div class="item_heading">Первая встреча: ЕЁ версия</div>
                               <div class="item_text"> Это случилось тогда, когда уже подошёл к концу
@@ -184,7 +184,7 @@
         </div>
         <div class="col">
                 <div class="item">
-                    <img src="../images/carousel2.jpg" alt="Иллюстрация"/>
+                    <img src="images/carousel2.jpg" alt="Иллюстрация"/>
                     <div class="item_desc">
                         <div class="item_heading">Знакомьтесь: СЕ И СЁ</div>
                         <div class="item_text">
@@ -201,7 +201,7 @@
                     </div>
             </div>
             <div class="item">
-                <img src="../images/2012.jpg" alt="Иллюстрация"/>
+                <img src="images/2012.jpg" alt="Иллюстрация"/>
                 <div class="item_desc">
                 <div class="item_heading">Я вся такая несуразная</div>
                 <div class="item_text"> На этой страничке я расскажу вам, как скачет мой вес +-20 кг,
@@ -217,7 +217,7 @@
                 </div>
             </div>
             <div class="item">
-                        <img src="../images/2.jpg" alt="Иллюстрация"/>
+                        <img src="images/2.jpg" alt="Иллюстрация"/>
                         <div class="item_desc">
                             <div class="item_heading">Первая встреча: ЕГО история </div>
                             <div class="item_text"> Вечер субботы - время спорта. Свайп влево,
