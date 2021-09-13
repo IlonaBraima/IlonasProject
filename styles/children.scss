@@ -6,7 +6,7 @@
 
 body {
   font: 16px/1.5 Roboto, sans-serif;
-  background-image: url("../images/mi1.jpg");
+  background-image: url("../images/deti1.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -46,42 +46,56 @@ body {
     background-color: skyblue;
   }
 
-  img {
-    flex-direction: row;
-    width: 30%;
-    margin: 15px;
-    padding: 3px;
+  .image_wrapper {
     background: linear-gradient(to right, skyblue 0%, dodgerblue 100%);
-    opacity: .9
+    opacity: .9;
+    padding: 3px;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+  .three_img {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+
+    .image_wrapper {
+      width: 32%;
+      margin: 15px 0;
+    }
   }
 }
 
 .header {
   display: flex;
-  border-radius: 30px;
   justify-content: space-between;
   align-items: center;
-  width: 1800px;
+  width: 1600px;
   height: 100px;
   margin: 1% 2% 1% 2%;
   padding: 1%;
 
-}
+  .menu {
+    margin: 70px 0 0 0;
+  }
 
-.menu-link {
-  display: flex;
-  height: 40px;
-  align-items: center;
-  text-align: center;
-  padding: 0 20px;
-  font: 20px "Roboto Light";
-  color: dodgerblue;
-  transition: color .5s ease;
-  background-color: rgba(135, 206, 235, .4);
-  border-radius: 30px;
+  .menu-link {
+      display: flex;
+      height: 40px;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+      font: 20px "Roboto Light";
+      color: dodgerblue;
+      transition: color .5s ease;
+      background-color: rgba(135, 206, 235, .4);
 
-  &:hover {
-    color: blue;
+    &:hover {
+      color: blue;
+    }
   }
 }
 
@@ -233,21 +247,80 @@ body {
 @media only screen and (min-width: 1200px) and (max-width: 1700px) {
 
   .boxpagechildren {
-    width: 1200px;
+    width: 1100px;
 
   }
-}
 
-@media only screen and (max-width: 1199px) and (min-width: 600px) {
-
-  .boxpagechildren {
-    max-width: 599px;
+  .head-r {
+    height: auto;
+    padding-top: 0;
   }
-  .boxpagechildren img {
-    margin: 0 0 0 0;
-    padding: 0 0 0 0;
-    background: none;
-    opacity: 0.9;
+
+  .head-l {
+    height: auto;
+    padding-top: 0;
+
+    a {
+      display: block;
+    }
+  }
+
+  .header {
+    display: flex;
+    border-radius: 30px;
+    width: 1100px;
+    height: 100px;
+    margin: 2% 2% 1% 2%;
+
+    .menu {
+
+      .menu-link {
+        border-radius: 0;
+        height: 20px;
+        margin-right: 40px;
+        margin-bottom: 5px;
+        padding: 0 20px;
+        font: 20px Roboto;
+        text-decoration: none;
+      }
+    }
+
+    .logo {
+      height: 100%;
+      padding-left: 50px;
+      padding-top: 30px;
+
+      h1 {
+        font: 70px/0.5 Style Script, cursive;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1199px) and (min-width: 600px) {
+
+    .boxpagechildren {
+      max-width: 599px;
+    }
+    .boxpagechildren img {
+      margin: 0 0 0 0;
+      padding: 0 0 0 0;
+      background: none;
+      opacity: 0.9;
+    }
+
+    .head-r {
+      height: auto;
+      padding-top: 0;
+    }
+
+    .head-l {
+      height: auto;
+      padding-top: 0;
+
+      a {
+        display: block;
+      }
+    }
   }
 }
 

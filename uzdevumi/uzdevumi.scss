@@ -13,6 +13,28 @@ body {
   background-size: cover;
   background-position: center;
 }
+.menu {
+  display: flex;
+  padding-right: 20px;
+}
+
+.menu-link {
+  display: flex;
+  height: 40px;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  font: 20px "Roboto Light";
+  color: black;
+  transition: color .5s ease;
+  background-color: grey;
+  border-radius: 30px;
+
+}
+
+.menu-link:hover {
+  color: white;
+}
 
 th {
   border: 2px solid black;
@@ -339,3 +361,33 @@ body.gauja {
 
 }
 
+.slider-button {
+  font-size: 30px;
+  color: green;
+
+  &.slider-button--left {
+  }
+
+  &.slider-button--right {
+  }
+}
+
+@media only screen and (min-width: 1365px) and (max-width: 1799px) {
+
+}
+
+@media only screen and (max-width: 1364px) and (min-width: 900px) {
+
+}
+@media only screen and (max-width: 899px) and (min-width: 230px) {
+
+  .daugavaimg img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 10%;
+    box-shadow: 5px 10px 10px grey;
+    padding: 10px 5px;
+    margin-top: 20px;
+  }
+
+}

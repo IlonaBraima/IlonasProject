@@ -1,22 +1,31 @@
 <!DOCTYPE html>
+<html lang="en">
+
+    <?php
+        include('../uzdevumi/datubaze.php');
+        $iconSelect = "SELECT * FROM head_right";
+        $iconResult = $conn->query($iconSelect);
+    ?>
 </html>
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no, viewport-fit=cover" />
+
 	<link href="https://fonts.googleapis.com/css2?family=Roboto@1&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css" type="text/css">
-<title>Myhomepage</title>
+    <link rel="stylesheet" href="../styles/children.css" type="text/css">
+    <link rel="stylesheet" href="../fonts/css/all.css" type="text/css">
+
+<title>children</title>
 
 </head>
 <body>
+<div class="boxpagechildren">
+
 <div>
 	<div class="header">
-		<div class="logo">
-					<h1>Ilona Braima</h1>
-		</div>
-		<div class="menu">
-				<div class="menu-item">
+		<div class="logo"><h1>Ilona Braima</h1></div>
+		<div class="menu"><div class="menu-item">
 					<a class="menu-link" href="index.php">На главную</a>
 				</div>
 				<div class="menu-item">
@@ -27,25 +36,23 @@
 				</div>
 		</div>
 	</div>
-		<div class=head-r>
-				<div class="flex just-center">
-					<a class="icon" title="Facebook" href="https://www.facebook.com/ilonabraim/"><img src="images/fb.png"></a>
-					<a class="icon" title="Instagram" href="https://www.instagram.com/ilona_braim/"><img src="images/ig.png"></a>
-					<a class="icon" title="Skype" href="https://join.skype.com/invite/zUQumwuqujXp"><img src="images/skype.png"></a>
-					<a class="icon" title="Whatsapp" href="https://www.facebook.com/ilonabraim/"><img src="images/whatsapp.png"></a>
-					<a class="icon" title="inbox" href="mailto:anoli2004@inbox.lv"><img src="images/inbox.png"></a>
-					<a class="icon" title="Linkedin" href="https://www.linkedin.com/in/ilonabraim/"><img src="images/linkedin.png"></a>
-				</div>
-		</div>
+	<div class=head-r>
+        <div class="flex just-center">
+                <?php
+                while ($icon = $iconResult->fetch_assoc()) {
+                echo  '<a class="icon" title="' . $icon['title'] . '"href="' . $icon['adres'] . '">
+                <img src="../images/' . $icon['icon'] . '"></a>';
+                }
+                ?>
+        </div>
+	</div>
 
-		<div class=head-l>
+	<div class=head-l>
 				<div>
-					<a class="linker" href="firstpage.php">HOME</a>
+					<a class="linker" href="index.php">HOME</a>
 				</div>
-		</div>
+	</div>
 
-	<div class="boxpage">
-			<div class="boxpagechildren">
 				<h1>Один из главных проектов в моей жизни - ДЕТИ</h1>
 				<h3>Знакомьтесь: СЕ И СЁ</h3>
 				<p>
@@ -57,11 +64,11 @@
 					Бывает нахлынут на тебя грустные мысли, сидишь погружённый в себя и вдруг слышишь
 					смех детей в соседней комнате и бах... всё опять хорошо!
 				</p>
-				<p>
-					<img src="images/deti1.jpg" alt="Фото1" title="Berni" width="30%">
-					<img src="images/happy.jpg" alt="Фото2" title="Berni2" width="30%">
-					<img src="images/deti2.jpg" alt="Фото3" title="Berni3" width="30%">
-				</p>
+            <div class="three_img">
+					<div class="image_wrapper"><img src="../images/deti1.jpg" alt="Фото1" title="Berni"></div>
+					<div class="image_wrapper"><img src="../images/happy.jpg" alt="Фото2" title="Berni2"></div>
+					<div class="image_wrapper"><img src="../images/deti2.jpg" alt="Фото3" title="Berni3"></div>
+            </div>
 			<div class="blockquotechildren">
 				<blockquote>
 				<p>Сема стоит и кричит с лоджии:</p>
@@ -86,7 +93,7 @@
 					Но мне очень не понравилось, что нога опухла и стала синеть.
 				</p>
 				<p>
-					<img src="images/rentgen.jpg" width="200" height="auto"
+					<img src="../images/rentgen.jpg" width="200" height="auto"
 					alt="Иллюстрация" align="right"></p>
 				<p>
 					Мы поехали в детскую больницу. Провели там около пяти часов и третьими по очереди в
@@ -138,7 +145,7 @@
 					спектр удовольствия.
 				</p>
 				<h3>Режим дня Се и Сё: ЛЕТО</h3>
-			<table>
+			<table class="table">
 				<tr>
 					<th>Nr.</th>
 					<th>Действие</th>
@@ -211,10 +218,78 @@
 					<td>с 21:00-22:00</td>
 					<td></td>
 				</tr>
-				<tr>
-					<td colspan="2">XXXXX<td/>
-				</tr>
 			</table>
+
+							<br/>
+            				<h3>Режим дня Се и Сё: ОСЕНЬ</h3>
+            				<table class="table">
+            					<tr>
+            						<th>Nr.</th>
+            						<th>Действие</th>
+            						<th>Время</th>
+            						<th>Примечания</th>
+            					</tr>
+            					<tr>
+            						<td>1.</td>
+            						<td>Подъём</td>
+            						<td>7:30-8:00</td>
+            						<td></td>
+            					</tr>
+            					<tr>
+            						<td>2.</td>
+            						<td>Зарядка</td>
+            						<td></td>
+            						<td></td>
+            					</tr>
+            					<tr>
+            						<td>3.</td>
+            						<td>Чистка зубов</td>
+            						<td>до 10:00</td>
+            						<td></td>
+            					</tr>
+            					<tr>
+            						<td>4.</td>
+            						<td>Завтрак</td>
+            						<td></td>
+            						<td></td>
+            					</tr>
+            					<tr>
+            						<td>5.</td>
+            						<td>Сделать обязательное дело по дому</td>
+            						<td>до 16:00</td>
+            						<td>Во время учебы до 20.00</td>
+            					</tr>
+            					<tr>
+            						<td>6.</td>
+            						<td>Ужин</td>
+            						<td>18:00-19:00</td>
+            						<td>Едим мах. до 20.00</td>
+            					</tr>
+            					<tr>
+            						<td>7.</td>
+            						<td>Спокойные игры, тихие занятия</td>
+            						<td>с 20:00</td>
+            						<td></td>
+            					</tr>
+            					<tr>
+            						<td>8.</td>
+            						<td>Гуляние без родителей</td>
+            						<td>до 19:00</td>
+            						<td>Сеня</td>
+            					</tr>
+            					<tr>
+            						<td>9.</td>
+            						<td>Вечерние процедуры</td>
+            						<td>с 20:30 до 20:59</td>
+            						<td>Чистят зубы, подмываются</td>
+            					</tr>
+            					<tr>
+            						<td>10.</td>
+            						<td>Сон</td>
+            						<td>с 21:00-22:00</td>
+            						<td>Сеня: аудиосказка; Сёма: читает сам, читают ему</td>
+            					</tr>
+            				</table>
 
 			<div class="blockquotechildren">
 				<blockquote>
@@ -236,7 +311,7 @@
 				</p>
 
 				<p>
-					<img src="images/deti3.jpg" width="300" height="auto"
+					<img src="../images/deti3.jpg" width="300" height="auto"
 					alt="Иллюстрация" align="right">
 				</p>
 				<p>
@@ -260,11 +335,11 @@
 				<h3>Школа</h3>
 
 				<p>
-					<img src="images/deti5.jpg" width="300" height="auto"
+					<img src="../images/deti5.jpg" width="300" height="auto"
 					alt="Иллюстрация" align="left">
 				</p>
 				<p>
-					<img src="images/deti6.jpg" width="200" height="auto"
+					<img src="../images/deti6.jpg" width="200" height="auto"
 					alt="Иллюстрация" align="right">
 				</p>
 				<p>
@@ -330,8 +405,18 @@
 						<footer>— <cite>Семён, 4,10г</cite></footer>
 					</blockquote>
 				</div>
+				<div class="blockquotechildren">
+                	<blockquote>
+                		<p>- Мам, вот была бы таблетка, которую дал тебе и ты оп и забыла, что
+                			 мне нужно зубы чистить и мыться.
+                		</p>
+                		<p>
+                		    А то каждый день одно и то же - чисти зубы, мойся...</p>
+                		<footer>— <cite>Сеня, 7 лет</cite></footer>
+                		</blockquote>
+                </div>
 	</div>
-</div>
+
 
 </body>
 </html>

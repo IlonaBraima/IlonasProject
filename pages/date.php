@@ -2,16 +2,16 @@
 <html lang="en">
 
     <?php
-    include('../db.php');
-    $iconSelect = "SELECT * FROM head_right";
-    $iconResult = $connMyhomepage->query($iconSelect);
+        include('../uzdevumi/datubaze.php');
+        $iconSelect = "SELECT * FROM head_right";
+        $iconResult = $conn->query($iconSelect);
     ?>
 
 <head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Roboto@1&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles/style.css" type="text/css">
+    <link rel="stylesheet" href="../styles/date.css" type="text/css">
     <title>MyDate</title>
 </head>
 <body>
@@ -21,7 +21,7 @@
                 <h1>Ilona Braima</h1>
             </div>
         <div class="menu">
-            <div class="menu-item"><a class="menu-link" href="firstpage.php">На главную</a></div>
+            <div class="menu-item"><a class="menu-link" href="index.php">На главную</a></div>
             <div class="menu-item"><a class="menu-link" href="mybodylove.php">Проект: МОЁ ТЕЛО</a></div>
             <div class="menu-item"><a class="menu-link" href="children.php">Проект: ДЕТИ</a></div>
         </div>
@@ -38,7 +38,7 @@
         </div>
     </div>
     <div class=head-l>
-        <div><a class="linker" href="firstpage.php">HOME</a></div>
+        <div><a class="linker" href="index.php">HOME</a></div>
     </div>
     <div>
         <div class="boxpage">
@@ -176,13 +176,6 @@
                         встречаемся, да?".
                     </p>
                     <p>
-                        <img src="../images/date1.jpg"
-                             width="400"
-                             height="auto"
-                             alt="Иллюстрация"
-                             align="left">
-                    </p>
-                    <p>
                         Написал мне один человек, красиво, по-русски, но без фото, завязался у нас разговор и
                         естественно я сразу спросила: "Женат?", на что получила отрицательный ответ. Чудесная,
                         интересная переписка перетекла в обмен контактами и всё затихло.
@@ -235,7 +228,7 @@
                     </p>
 
                     <p>
-                        <img src="images/date2.jpg" width="500" height="auto"
+                        <img src="../images/date2.jpg" width="500" height="auto"
                             alt="Иллюстрация" align="right">
                     </p>
 
@@ -464,7 +457,7 @@
                         что я делаю.
                     </p>
                     <p>
-                        <img src="images/date13.jpg" width="350" height="auto"
+                        <img src="../images/date13.jpg" width="350" height="auto"
                              alt="Иллюстрация" align="right">
                     </p>
                     <p>А что я делаю? Еду и есть хочу. Так и пишу "Еду домой и так есть хочу, что руль готова

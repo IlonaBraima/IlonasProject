@@ -19,7 +19,9 @@
 
 
 <head>
-    <meta charset="UTF-8"><link rel="stylesheet" href="uzdevumi.css" type="text/css">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="uzdevumi.css" type="text/css">
+    <link rel="stylesheet" href="../fonts/css/all.css" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no, viewport-fit=cover" />
 
     <title>Daugava</title>
@@ -58,7 +60,15 @@
                 </div>
              <div class="right"></div>
     </div>
-
+        <div class="row">
+                <div class="left"></div>
+                    <div class="center">
+                    <div class="slider_control"
+                      <button onclick="left()"><span class="far slider-button slider-button--left fa-hand-point-left"></span></button>
+                      <button onclick="right()"><span class="far slider-button slider-button--right fa-hand-point-right"></span></button>
+                    </div>
+                <div class="right"></div>
+        </div>
     <div class="row">
             <div class="left"></div>
                 <div class="center">
@@ -71,13 +81,7 @@
                     </div>
             <div class="right"></div>
     </div>
-        <div class="row">
-                <div class="left"></div>
-                    <div class="center">
-                      <button onclick="left()">to left</button><button onclick="right()">to right</button>
-                    </div>
-                <div class="right"></div>
-        </div>
+
 
 <script src="script.js"></script>
 
