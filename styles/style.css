@@ -5,20 +5,25 @@
 }
 
 body {
+    padding:0;
+    margin:0;
+    height: 400px;
     font: 16px/1.5 Roboto, sans-serif;
-    background-image: url("../images/mi1.jpg");
+    background-size: cover;
+    /*background-image: url("../images/mi1.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    background-position: center;
+    background-position: center;*/
+
 }
 
 .container {
     display: flex;
     flex-wrap: wrap;
-    width: 1700px;
+    width: 1800px;
     margin: 0 auto;
-    background-color: rgba(245, 245, 245, .8)
+    background-color: rgba(245, 245, 245, .8);
 
 }
 
@@ -28,6 +33,7 @@ body {
     padding: 0 10px;
     background-color: white;
     border-radius: 30px;
+    z-index: 7;
 }
 
 .container .col1 img {
@@ -42,6 +48,7 @@ body {
     width: 20%;
     padding: 0 10px;
     margin: 20px 0 0 0;
+    z-index: 7
 }
 .container .col .item {
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1);
@@ -104,6 +111,7 @@ body {
     color: #fa89a3;
     padding-left: 50px;
     padding-top: 30px;
+    z-index: 6;
 }
 
 .logo h1 {
@@ -112,15 +120,17 @@ body {
 
 .menu-link {
     display: flex;
-    height: 40px;
+    height: 50px;
     align-items: center;
     text-align: center;
-    padding: 0 20px;
-    font: 20px "Roboto Light";
+    padding: 0 10px;
+    font: 20px/1.25 Style Script, cursive;
     color: #fa89a3;
     transition: color .5s ease;
-    background-color: #ffd1dc;
+    background-color: rgba(245, 245, 245, .8);
     border-radius: 30px;
+    z-index: 7;
+
 
 }
 
@@ -130,7 +140,8 @@ body {
 
 .menu {
     display: flex;
-    padding-right: 20px;
+    padding-left: 500px;
+    z-index: 7
 }
 
 .head-r {
@@ -236,6 +247,29 @@ body {
     color: #ffd1dc;
 }
 
+.slider-button {
+    font-size: 40px;
+    color: hotpink;
+    background: transparent;
+    border: none;
+}
+    .slider-button--right {
+
+ }
+
+    .slider-button--left {
+ }
+
+/*body {
+   background-color:black;
+}*/
+#c {
+    opacity:.8;
+}
+canvas {
+    position:fixed;
+    top:0; left:0; right: 2%;
+}
 
 @media only screen and (min-width: 1365px) and (max-width: 1799px) {
     .container {
