@@ -7,15 +7,17 @@
 @import url('https://fonts.googleapis.com/css?family=Marck+Script');
 
 body {
-  font: 16px/1.5 Roboto, sans-serif;;
+  font: 16px/1.5 Roboto, sans-serif;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
 }
-.menu {
+.menurow {
   display: flex;
-  padding-right: 20px;
+  justify-content: space-between;
+  width: 100%;
+  background: darkgrey;
 }
 
 .menu-link {
@@ -397,7 +399,7 @@ body.gauja {
 @media only screen and (max-width: 1364px) and (min-width: 900px) {
 
 }
-@media only screen and (max-width: 899px) and (min-width: 230px) {
+@media only screen and (max-width: 899px) and (min-width: 320px) {
 
   .daugava {
     margin: 20px 20px 20px 20px;
@@ -413,4 +415,73 @@ body.gauja {
     margin-top: 20px;
   }
 
+}
+
+
+/* Контейнер навигации */
+.navbar {
+  background-color: grey;
+  width: 33.3333%;
+  text-align: center;
+  align-items: center;
+}
+
+
+/* Ссылки в панели навигации */
+.navbar a {
+  display: flex;
+  font: 20px/1.25 Roboto;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Выпадающий контейнер */
+.dropdown {
+
+}
+
+/* Кнопка выпадающего списка */
+.dropdown .dropbtn {
+  font: 40px/1.25 Style Script, cursive;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: grey;
+  margin: 0 auto; /* Важно для вертикального выравнивания на мобильных телефонах */
+
+}
+
+/* Добавить красный цвет фона для ссылок на навигационную панель при наведении курсора */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: deepskyblue;
+  width: 100%;
+}
+
+/* Выпадающее содержимое (скрыто по умолчанию) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  width: 310px;
+  box-shadow: 20px 20px 20px 20px rgba(0,0,0,0.2);
+}
+
+/* Ссылки внутри выпадающего списка */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Добавить серый цвет фона для выпадающих ссылок при наведении курсора */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Показать выпадающее меню при наведении курсора */
+.dropdown:hover .dropdown-content {
+  display: block;
 }
