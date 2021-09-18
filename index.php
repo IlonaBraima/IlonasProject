@@ -28,11 +28,19 @@
 		<div class="logo">
 				<h1>Ilona Braima</h1>
 		</div>
-
+        <div class="navbar">
+            <div class="dropdown">
+                <button class="dropbtn">My life projects<span class="fa fa-caret-down"></span></button>
+                <div class="dropdown-content">
+                    <a href="pages/date.php">Проект: Мои 100 свиданий</a>
+                    <a href="pages/children.php">Проект: Дети</a>
+                    <a href="pages/QA.php">Проект: QA/Software tester</a>
+                    <a href="pages/honest_relationship.html">Проект: Честные отношения</a>
+                    <a href="pages/mybodylove.php">Проект: Моё тело</a>
+                </div>
+            </div>
+        </div>
 		<div class="menu">
-			<div class="menu-item">
-			    <a class="menu-link" href="uzdevumi/maniuzdevumi.html">Mājas uzdevums</a>
-			</div>
 			<div class="menu-item">
 				<a class="menu-link" href="pages/date.php">Проект: Мои 100 свиданий</a>
 			</div>
@@ -125,12 +133,6 @@
 					<cite>Ilona Braim</cite>
 				</p>
     	    </div>
-    	    <div>
-                        <button onclick="lefts()" class="slider-button slider-button--left">
-                        <span class="far fa-hand-point-left"></span></button>
-                        <button onclick="right()" class= "slider-button slider-button--right">
-                        <span class="far fa-hand-point-right"></span></button>
-            </div>
             <p>
                 На этом сайте я хочу обозначить все грабли, на которые наступила, возможно мои шишки,
                  если не помогут, то хоть посмешат. Свою жизнь, благодаря чётким формулировкам мужа,
@@ -143,13 +145,10 @@
                 как это женщина - 25 лет, будучи глубоко замужем и без детей. Непорядок. Давление не прошло зря,
                 девочка созрела и в этом проекте начала разглядывать глобальный смысл и интерес подогревался.
             </p>
+            <p>Всё оказалось намного ярче и интереснее.</p>
             <br/>
-            <div class="blockquote-2">
-
-                    <p>Всё оказалось намного ярче и интереснее.</p>
-                 					<cite>Ilona Braim</cite>
-            </div>
-                <a href="pages/children.php"><h2>Проект: Дети</h2></a>
+            <a href="pages/children.php"><button class="buttonblue" type="button">Проект: Дети</button></a>
+            <br/>
                 <span class="fas slider-button_skyblue fa-shoe-prints"></span>
                 <span class="fas slider-button_skyblue fa-shoe-prints"></span>
                 <span class="fas slider-button_skyblue fa-shoe-prints"></span>
@@ -161,25 +160,31 @@
                 К сожалению, мой первый брак распался. От глобальной ошибки он перерос в
                 невероятной значимости опыт, который привёл меня в необыкновенный и счастливый
                 второй брак. А между этими событиями несколько лет свободы и поиска. Именно это
-                время описано в
-
+                время описано в проекте, где я постаралась описать большинство своих свиданий
+                или остатки впечатлений о них.
             </p>
             <br/>
-            <a href="pages/date.php"><button type="button">Проект: 100 моих свиданий</button></a>
-
-            <div class="navbar">
-                <div class="dropdown">
-                    <button class="dropbtn">Проекты<i class="fa fa-caret-down"></i></button>
-                    <div class="dropdown-content">
-                        <a href="pages/date.php">Проект: Мои 100 свиданий</a>
-                        <a href="pages/children.php">Проект: Дети</a>
-                        <a href="pages/QA.php">Проект: QA/Software tester</a>
-                        <a href="pages/honest_relationship.html">Проект: Честные отношения</a>
-                        <a href="pages/mybodylove.php">Проект: Моё тело</a>
-                    </div>
-                </div>
-            </div>
-
+            <a href="pages/date.php"><button class="buttonorange" type="button">Проект: 100 моих свиданий</button></a>
+            <br/>
+            <p>
+                Когда ищешь, обязательно найдёшь и мой марафон завершился долго и счастливо,
+                пока не умерли, но есть надежда, что в один день. Наша история, как минимум
+                весёлая, как максимум поучительная, и на все 100 - честная.
+            </p>
+            <a href="pages/honest_relationship.html">
+                <button class="buttongrey" type="button">Проект: Честные отношения</button>
+            </a>
+            <br/>
+            <p>
+               Все больше или меньше озабочены своим телом - обьёмом, весом, ростом, размером ног, груди,
+                динной волос и уничтожением волосяного покрова и ещё множество мелочей и совсем не мелочей.
+                Об этом глобальном проекте в одноимённом рассказе.
+            </p>
+            <br/>
+            <a href="pages/honest_relationship.html">
+                <button class="buttonsea" type="button">Проект: Моё тело</button>
+            </a>
+            <br/>
         </div>
 
         <div class="col">
@@ -289,7 +294,9 @@
 
         </div>
     </div>
-
+    <footer class="footer">
+        <p>© 2021 Ilona Braim, по всем вопросам пишите по адресу anoli2004@inbox.lv</p>
+    </footer>
 </body>
 </html>
 
