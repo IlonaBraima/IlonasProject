@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <?php
-        include('../uzdevumi/datubaze.php');
-        $iconSelect = "SELECT * FROM head_right";
-        $iconResult = $conn->query($iconSelect);
-    ?>
-
 <head>
     <meta charset="UTF-8">
     <link href="https://fonts.googleapis.com/css2?family=Roboto@1&display=swap" rel="stylesheet">
