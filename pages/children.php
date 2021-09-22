@@ -37,12 +37,11 @@
 	</div>
 	<div class=head-r>
         <div class="flex just-center">
-                <?php
-                while ($icon = $iconResult->fetch_assoc()) {
-                echo  '<a class="icon" title="' . $icon['title'] . '"href="' . $icon['adres'] . '">
-                <img src="../images/' . $icon['icon'] . '"></a>';
-                }
-                ?>
+            <?php
+            while ($icon = $iconResult->fetch_assoc()) {
+                echo  '<a href="' . $icon['adres'] . '"class="' . $icon['fonts'] . '"title="' . $icon['title'] . '"></a>';
+            }
+            ?>
         </div>
 	</div>
 

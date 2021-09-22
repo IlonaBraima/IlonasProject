@@ -118,6 +118,17 @@ body {
   z-index: 5;
 }
 
+.icon {
+  font-size: 40px;
+  color: grey;
+  text-decoration: none;
+  margin: 0 5px 0 0;
+}
+
+.icon:hover {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
 .head-l {
   bottom: 0;
   left: 0;
@@ -140,19 +151,6 @@ body {
 
 .flex {
   display: flex;
-}
-
-.icon {
-  display: block;
-  width: 22px;
-  height: 22px;
-  margin: 0 5px;
-}
-.icon img {
-  display: block;
-  width: 100%;
-  height: auto;
-  opacity: 0.4;
 }
 
 .linker:link, .linker:visited {

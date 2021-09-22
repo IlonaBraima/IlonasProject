@@ -68,6 +68,10 @@
         width: 1300px;
     }
 
+    .head-r {
+        padding-top: 10px;
+    }
+
     .container .col {
         width: 20%;
         padding: 0 5px;
@@ -89,6 +93,10 @@
     .header {
         width: 1100px;
         margin: 0 auto;
+    }
+
+    .head-r {
+        padding-top: 10px;
     }
 
     .menu {
@@ -142,6 +150,10 @@
         font: 15px/1.25 Style Script, cursive;
     }
 
+    .head-r {
+        padding-top: 10px;
+    }
+
     .container .col1 {
         width: 45%;
         padding: 0 5px;
@@ -190,6 +202,10 @@
         height: 40px;
         padding: 0 5px;
         font: 15px/1.25 Style Script, cursive;
+    }
+
+    .head-r {
+        padding-top: 10px;
     }
 
     .container .col1 {
@@ -242,6 +258,10 @@
         font: 15px/1.25 Style Script, cursive;
     }
 
+    .head-r {
+        padding-top: 5px;
+    }
+
     .container .col1 {
         width: 100%;
         padding: 0 5px;
@@ -274,7 +294,7 @@
 
 }
 
-@media only screen and (max-width: 599px) and (min-width: 320px) {
+@media only screen and (max-width: 599px) and (min-width: 0) {
 
     .container {
         max-width: 320px;
@@ -297,6 +317,10 @@
 
     .menu-link {
         display: none;
+    }
+
+    .head-r {
+        padding-top: 10px;
     }
 
     .logo {
