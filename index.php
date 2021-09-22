@@ -3,11 +3,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <?php
-        include('uzdevumi/datubaze.php');
-        $iconSelect = "SELECT * FROM head_right";
-        $iconResult = $conn->query($iconSelect);
-    ?>
+
+<?php
+include('uzdevumi/datubaze.php');
+$iconSelect = "SELECT * FROM `head_right`";
+$iconResult = $conn->query($iconSelect);
+?>
+
 
 <head>
 	<meta charset="utf-8">
@@ -17,6 +19,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="styles/style.css" type="text/css">
 	<link rel="stylesheet" href="fonts/css/all.css" type="text/css">
+    <link rel="stylesheet" href="styles/media.css" type="text/css">
 
 	<title>ILONA</title>
 
@@ -61,11 +64,9 @@
 
 	<div class=head-r>
         <div class="flex just-center">
-
             <?php
             while ($icon = $iconResult->fetch_assoc()) {
-            echo  '<a class="icon" title="' . $icon['title'] . '"href="' . $icon['adres'] . '">
-            <img src="images/' . $icon['icon'] . '"></a>';
+            echo  '<a href="' . $icon['adres'] . '"class="' . $icon['fonts'] . '"title="' . $icon['title'] . '"></a>';
             }
             ?>
         </div>
