@@ -126,7 +126,6 @@ body {
 
 
 .head-r {
-  top: 0;
   right: -100vh;
   width: 100vh;
   transform: rotate(90deg);
@@ -136,7 +135,18 @@ body {
   text-align: center;
   font-size: 30px;
   padding-top: 30px;
+}
+
+.icon {
+  font-size: 40px;
+  color: grey;
+  text-decoration: none;
+  margin: 0 5px 0 0;
   z-index: 5;
+}
+
+.icon:hover {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
 }
 
 .head-l {
@@ -163,13 +173,6 @@ body {
   display: flex;
 }
 
-.icon {
-  display: block;
-  width: 22px;
-  height: 22px;
-  margin: 0 5px;
-
-}
 
 .linker:link, .linker:visited {
   font-size: 33px;
@@ -177,3 +180,307 @@ body {
   text-decoration: none;
 }
 
+@media only screen and (max-width: 1799px) and (min-width: 1700px) {
+  .boxpage {
+    max-width: 1600px;
+    margin: 0 auto;
+
+  }
+  header {
+    width: 1600px;
+  }
+}
+
+
+@media only screen and (max-width: 1699px) and (min-width: 1500px) {
+  .boxpage {
+    max-width: 1400px;
+    margin: 0 auto;
+
+  }
+
+  .header {
+    width: 1400px;
+  }
+
+  .head-r {
+    padding-top: 10px;
+  }
+}
+@media only screen and (max-width: 1499px) and (min-width: 1390px) {
+  .boxpage {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+
+  .header {
+    width: 1300px;
+  }
+
+  .head-r {
+    padding-top: 10px;
+  }
+}
+
+@media only screen and (max-width: 1389px) and (min-width: 1200px) {
+  .boxpage {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .header {
+    width: 1100px;
+    margin: 0 auto;
+  }
+
+  .head-r {
+    padding-top: 10px;
+  }
+
+  .head-l {
+    padding-top: 5px;
+  }
+
+  .menu {
+    margin-left: 5px;
+  }
+
+  .menu-link {
+    height: 40px;
+    padding: 0 5px;
+    font: 15px/1.25 Style Script, cursive;
+  }
+}
+
+@media only screen and (max-width: 1199px) and (min-width: 1000px) {
+  .boxpage {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .header {
+    width: 900px;
+  }
+
+  .menu {
+    margin-left: 5px;
+  }
+
+  .menu-link {
+    height: 40px;
+    padding: 0 5px;
+    font: 15px/1.25 Style Script, cursive;
+  }
+
+  .head-r {
+    padding-top: 10px;
+  }
+
+  .head-l {
+    padding-top: 5px;
+  }
+
+}
+
+@media only screen and (max-width: 999px) and (min-width: 800px) {
+
+  .boxpage {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .header {
+    width: 800px;
+  }
+
+  .menu {
+    margin-left: 5px;
+  }
+
+  .menu-link {
+    height: 40px;
+    padding: 0 5px;
+    font: 15px/1.25 Style Script, cursive;
+  }
+
+  .head-r {
+    padding-top: 10px;
+  }
+
+  .head-l {
+    padding-top: 5px;
+  }
+  .fontdate {
+
+    .blockquote {
+      width: 90%;
+      float: none;
+      padding: 5px;
+      margin: 10px;
+      border: thick double lightslategrey;
+      border-radius: 3px;
+      background-color: white;
+    }
+
+    .blockquoteleft {
+      width: 90%;
+      float: none;
+      padding: 5px;
+      margin: 10px;
+      border: thick double lightslategrey;
+      border-radius: 3px;
+      background-color: white;
+    }
+    p {
+      font: 14px/1.5 "Roboto Thin", sans-serif;
+      margin: 10px;
+    }
+  }
+}
+
+@media only screen and (max-width: 799px) and (min-width: 600px) {
+  .boxpage {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .header {
+    width: 600px;
+  }
+
+  .menu {
+    margin-left: 5px;
+  }
+
+  .menu-link {
+    height: 40px;
+    padding: 0 5px;
+    font: 15px/1.25 Style Script, cursive;
+  }
+
+  .head-r {
+    padding-top: 5px;
+  }
+
+  .head-l {
+    padding-top: 5px;
+  }
+
+  .logo h1 {
+    font: 40px/0.5 Style Script, cursive;
+  }
+
+  .fontdate {
+
+    .blockquote {
+      width: 90%;
+      float: none;
+      padding: 5px;
+      margin: 10px;
+      border: thick double lightslategrey;
+      border-radius: 3px;
+      background-color: white;
+    }
+
+    .blockquoteleft {
+      width: 90%;
+      float: none;
+      padding: 5px;
+      margin: 10px;
+      border: thick double lightslategrey;
+      border-radius: 3px;
+      background-color: white;
+    }
+    p {
+      font: 14px/1.5 "Roboto Thin", sans-serif;
+      margin: 10px;
+    }
+  }
+
+}
+
+@media only screen and (max-width: 599px) and (min-width: 0) {
+
+  .boxpage {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .fontdate {
+
+    .blockquote {
+      width: 90%;
+      float: none;
+      padding: 5px;
+      margin: 10px;
+      border: thick double lightslategrey;
+      border-radius: 3px;
+      background-color: white;
+    }
+
+    .blockquoteleft {
+      width: 90%;
+      float: none;
+      padding: 5px;
+      margin: 10px;
+      border: thick double lightslategrey;
+      border-radius: 3px;
+      background-color: white;
+    }
+    p {
+      font: 14px/1.5 "Roboto Thin", sans-serif;
+      margin: 10px;
+    }
+  }
+
+  .head-r {
+    display: none;
+  }
+
+  .head-l {
+    padding-top: 5px;
+  }
+
+  .header {
+    width: 250px;
+    height: 50px;
+    margin: 2% auto;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .menu-link {
+    display: none;
+  }
+
+  .head-r {
+    padding-top: 10px;
+  }
+
+  .head-l {
+    display: none;
+  }
+
+  .logo {
+    display: contents;
+    height: 100%;
+    padding-left: 5px;
+    padding-top: 5px;
+    z-index: 6;
+
+  }
+
+  .fontdate img {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    background: none;
+    opacity: 0.9;
+  }
+
+  .logo h1 {
+    font: 40px/0.5 Style Script, cursive;
+  }
+}

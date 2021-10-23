@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <?php
-        include('../uzdevumi/datubaze.php');
-        $iconSelect = "SELECT * FROM head_right";
-        $iconResult = $conn->query($iconSelect);
-    ?>
+<?php
+include('../uzdevumi/datubaze.php');
+$iconSelect = "SELECT * FROM `head_right`";
+$iconResult = $conn->query($iconSelect);
+?>
 
 <head>
-    <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto@1&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
+    <?php include('./parts/head-common.php'); ?>
     <link rel="stylesheet" href="../styles/date.css" type="text/css">
+
     <title>MyDate</title>
 </head>
 <body>
@@ -28,17 +27,8 @@
             <div class="menu-item"><a class="menu-link" href="children.php">Проект: ДЕТИ</a></div>
         </div>
     </div>
+    <?php include('./parts/header-right.php'); ?>
 
-    <div class=head-r>
-        <div class="flex just-center">
-            <?php
-            while ($icon = $iconResult->fetch_assoc()) {
-            echo  '<a class="icon" title="' . $icon['title'] . '"href="' . $icon['adres'] . '">
-            <img src="../images/' . $icon['icon'] . '"></a>';
-            }
-            ?>
-        </div>
-    </div>
     <div class=head-l>
         <div><a class="linker" href="../index.php">HOME</a></div>
     </div>
@@ -75,13 +65,11 @@
                         встречу.
                     </p>
                 <h3 class="h3date">Женщины после 30 не флиртуют, они ФИЛЬТРУЮТ!</h3>
-                <p>
                     <img src="../images/date10.jpg"
                          width="500"
                          height="auto"
                          alt="Иллюстрация"
                          align="right">
-                </p>
                     <p>
                         Встретил меня парень в широких штанах и первым делом стал рассказывать, как пополнел и
                         стесняется этого. Почему-то он сразу решил проверить мою попку на прочность и при случае
@@ -127,12 +115,10 @@
                     <p>
                         На сайтах знакомств очень много женатых мужчин. Ну вот как бы обидно не звучало.
                     </p>
-                    <p>
                             <img src="../images/date4.jpg"
                                  width="400"
                                  height="auto"
                                  alt="Иллюстрация" align="left">
-                    </p>
                     <p>
                         Некоторых вычислить сложно, другие и не скрываются. Но если у мужчины нет фото,
                         вот 100%. Какое-то время мне было забавно делать опрос, по каким причинам женатые мужчины
@@ -228,12 +214,8 @@
                         поехать, чего-то посмотреть, а он не хотел отъезжать от своего района, так постепенно наше
                         общение сошло на нет.
                     </p>
-
-                    <p>
                         <img src="../images/date2.jpg" width="500" height="auto"
                             alt="Иллюстрация" align="right">
-                    </p>
-
                     <p>
                         Ещё одна подобная встреча была с парнем, который только что вернулся из Англии, где ничего
                         за много лет не заработал, но историй собрал много. Часа три я выслушивала, где и как он работал
@@ -304,12 +286,8 @@
                     <h3 class="h3date">
                         Главное - начать!
                     </h3>
-
-                    <p>
                         <img src="../images/date11.jpg" width="350" height="auto"
                              alt="Иллюстрация" align="right">
-                    </p>
-
                     <p>
                         Xотелось бы вспомнить о своём самом первом свидании за последние 17 лет. История с продолжением и это уже,
                         наверное, к разговору о долгожителях сайтов знакомств.
@@ -352,10 +330,8 @@
                         неизведанный мир свободной женщины!
                     </p>
                 <h3 class="h3date">Размер имеет значение #мои100свиданий</h3>
-                    <p>
                         <img src="../images/date14.jpg" width="250" height="auto"
                              alt="Иллюстрация" align="right">
-                    </p>
                     <p>
                         Ну, вот родилась я такой - высокой и немаленькой. Судьба у меня такая. Всегда комплексовала,
                         была выше всех сверстников...
@@ -458,10 +434,8 @@
                         Пробки, скукота. Еду я с работы и переписываюсь с пятью мужчинами. И тут один спрашивает,
                         что я делаю.
                     </p>
-                    <p>
                         <img src="../images/date13.jpg" width="350" height="auto"
                              alt="Иллюстрация" align="right">
-                    </p>
                     <p>А что я делаю? Еду и есть хочу. Так и пишу "Еду домой и так есть хочу, что руль готова
                         грызть". А сама думаю - какая чудесная мысль. И пишу эту фразу всем сразу.
                     </p>

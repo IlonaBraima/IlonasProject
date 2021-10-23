@@ -1,6 +1,6 @@
 
 <?php
-$conn=mysqli_connect("localhost","root","","upes");
+$conn=mysqli_connect("localhost","root","","ilonasproject");
 if(!$conn){
 	die("Pieslēguma kļūda: ".mysqli_connect_error());
 }
