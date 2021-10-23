@@ -16,6 +16,8 @@ $iconResult = $conn->query($iconSelect);
 </head>
 <body>
 
+
+
     <div class="header">
             <div class="logo">
                 <h1>Ilona Braima</h1>
