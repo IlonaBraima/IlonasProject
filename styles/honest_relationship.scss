@@ -68,6 +68,7 @@ body {
 
 .container {
   display: flex;
+  flex-wrap: wrap;
   max-width: 1200px;
   margin: 0 auto;
 
@@ -123,11 +124,13 @@ body {
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
   .container {
-    display: flex;
-    max-width: 600px;
-    margin: 0 auto;
+
+    .col {
+      width: 100%;
+      padding: 0 5px;
+    }
   }
 }
 

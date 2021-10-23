@@ -62,7 +62,7 @@ $iconResult = $conn->query($iconSelect);
         </div>
     </div>
 
-	<div class=head-r>
+	<div class="head-r">
         <div class="flex just-center">
             <?php
             while ($icon = $iconResult->fetch_assoc()) {

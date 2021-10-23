@@ -13,24 +13,45 @@ body {
   background-position: center;
 }
 
-.menu {
-  display: flex;
-  padding-right: 20px;
+a {
+  text-decoration: none;
+}
 
-  .menu-link {
-    display: flex;
-    height: 60px;
-    align-items: center;
-    text-align: center;
-    padding: 0 20px;
-    font: 25px Roboto;
-    color: #dc5371;
-    transition: color .3s ease;
-  }
 
-  .menu-link:hover {
-    color: #fa89a3;
-  }
+.header {
+  height: 100px;
+  background: url("../images/qaimages/bug4.jpg");
+  background-repeat: repeat-x;
+  background-size: contain;
+}
+
+.head-r {
+  top: 0;
+  right: -100vh;
+  width: 100vh;
+  transform: rotate(90deg);
+  transform-origin: top left;
+  height: 60px;
+  position: fixed;
+  text-align: center;
+  font-size: 30px;
+  padding-top: 30px;
+  z-index: 5;
+}
+
+.just-center {
+  justify-content: center;
+}
+
+.icon {
+  font-size: 40px;
+  color: grey;
+  text-decoration: none;
+  margin: 0 5px 0 0;
+}
+
+.icon:hover {
+  box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
 }
 
 .boxpageqa {
@@ -38,18 +59,10 @@ body {
 
   .row {
 
-    &.first {
-      .center {
-        width: calc(100% - 600px);
-      }
-
-      .right {
-        width: 400px;
-      }
-    }
     p {
       margin-bottom: 10px;
     }
+
     h5 {
       margin: 15px;
       font-size: 15px;
@@ -61,27 +74,16 @@ body {
       padding-left: 10px;
       margin: 10px 0 10px 0;
     }
+
     b {
       padding: 10px;
       margin: 10px;
     }
+
     .left {
       padding: 1px;
       width: 200px;
       float: left;
-
-      .logo {
-        display: flex;
-        height: 100%;
-        align-items: center;
-        color: #3CA1D9;
-        font: 70px/0.5 Style Script, cursive;
-        margin-left: 40px;
-        margin-top: 40px;
-      }
-      a {
-        text-decoration: none;
-      }
     }
 
     .center {
@@ -93,21 +95,33 @@ body {
       width: 200px;
       float: left;
 
-      .hiper {
-        color: black;
-        text-decoration: none;
+      .borderbody {
+        display: block;
+        font: 20px/1.5 Lobster, cursive;
+        text-align: center;
+        border-style: groove;
+        border-color: transparent;
+        border-width: 7px;
+        margin-top: 50px;
+        margin-right: 20px;
+        padding: 5px;
 
-        &:hover {
-          color: slategrey;
-          background: honeydew;
+        .hiper {
+          color: black;
           text-decoration: none;
-        }
-        &:visited {
-          color: grey;
+
+          &:hover {
+            color: slategrey;
+            background: honeydew;
+            text-decoration: none;
+          }
+
+          &:visited {
+            color: grey;
+          }
         }
       }
     }
-
     .gold {
       color: gold;
     }
@@ -116,28 +130,20 @@ body {
       color: goldenrod;
     }
 
-      &:after {
-        content: "";
-        clear: both;
-        display: table;
-      }
-
-      h1 {
-        text-align: center;
-        margin: 30px 0 30px 0;
-        font-size: 50px;
-        color: #3CA1D9;
-
-      }
-    .iconhome {
-
-      img {
-        width: 60px;
-        height: auto;
-        text-align: right;
-        margin: 20px;
-      }
+    &:after {
+      content: "";
+      clear: both;
+      display: table;
     }
+
+    h1 {
+      text-align: center;
+      margin: 30px 0 30px 0;
+      font-size: 50px;
+      color: #3CA1D9;
+
+    }
+
     table {
       border-style: ridge;
       box-sizing: content-box;
@@ -156,43 +162,247 @@ body {
   }
 }
 
-.header {
+.fam {
+  padding-left: 15px;
+}
+  .iconhome {
+    margin: 10px;
+    height: auto;
+    bottom: 0;
+    left: calc(50% + 600px);
+    position: fixed;
+    text-align: center;
+    font-size: 60px;
+    z-index: 5;
+    color: grey;
+
+    img {
+      width: 60px;
+      height: auto;
+      border-radius: 20px;
+
+      &:hover {
+        box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+  .litlleimg {
+    width: 30%;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .mediumimg {
+    width: 70%;
+    margin: 0 auto;
+    display: block;
+  }
+
+.footer {
+  background: #eee;
+  margin-top: 25px;
+  padding: 0 15px 10px;
+  border-top: 2px solid #ccc;
+  font-size: 0.9em;
+  clear: both;
+  display: block;
+  background: linear-gradient(to bottom,#eee 0%,#fff 100%);
+}
+
+  .navbar {
+    display: block;
+  }
+
+  /* Ссылки в панели навигации */
+  .navbar a {
+    float: left;
+    font: 20px/1.25 Style Script, cursive;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  /* Выпадающий контейнер */
+  .dropdown {
+    float: left;
+  }
+
+  /* Кнопка выпадающего списка */
+  .dropdown .dropbtn {
+    font: 50px/0.5 Style Script, cursive;
+    border: none;
+    outline: none;
+    color: #3CA1D9;
+    margin: 0; /* Важно для вертикального выравнивания на мобильных телефонах */
+    background-color: transparent;
+
+    .logo {
+      color: #3CA1D9;
+      font: 50px/0.5 Style Script, cursive;
+    }
+  }
+
+  /* Добавить красный цвет фона для ссылок на навигационную панель при наведении курсора */
+  .navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: white;
+  }
+
+  /* Выпадающее содержимое (скрыто по умолчанию) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  }
+
+  /* Ссылки внутри выпадающего списка */
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+  /* Добавить серый цвет фона для выпадающих ссылок при наведении курсора */
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+
+  /* Показать выпадающее меню при наведении курсора */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+.string {
   display: flex;
   justify-content: space-between;
+}
+
+.string-link {
+  display: flex;
   height: 100px;
-  background: url("../images/qaimages/bug4.jpg");
-  background-repeat: repeat-x;
-  background-size: contain;
+  align-items: center;
+  padding: 0 10px;
+  transition: color .5s ease;
 }
 
-.borderbody {
-  font: 20px/1.5 Lobster, cursive;
-  text-align: center;
-  border-style: groove;
-  border-color: transparent;
-  border-width: 7px;
-  margin-top: 50px;
-  margin-right: 20px;
-  padding: 5px;
- }
-
-
-
-
-.firstimg {
-  width: 80%;
-  margin: 0 auto;
-  display: block;
+.string-link:hover {
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
 }
 
-.litlleimg {
-  width: 30%;
-  margin: 0 auto;
-  display: block;
+@media only screen and (max-width: 1400px) and (min-width: 750px) {
+  .iconhome {
+    left: calc(50% + 300px);
+    font-size: 40px;
+
+    img {
+      width: 40px;
+    }
+  }
 }
 
-.mediumimg {
-  width: 70%;
-  margin: 0 auto;
-  display: block;
+@media only screen and (max-width: 749px) and (min-width: 320px) {
+  .dropdown .dropbtn {
+    font: 30px/1.0 Style Script, cursive;
+  }
+
+  .logo {
+    font: 30px/0.5 Style Script, cursive;
+  }
+  .iconhome {
+    left: calc(50% + 95px);
+    font-size: 20px;
+
+    img {
+      width: 20px;
+    }
+  }
+
+  .boxpageqa {
+    margin: 10px 5px 0 5px;
+
+    .row table {
+      width: 300px;
+    }
+
+    p {
+      margin-bottom: 10px;
+      font-size: 12px;
+    }
+
+    .row {
+
+      p {
+        margin-bottom: 10px;
+        font-size: 12px;
+      }
+
+      h1 {
+        margin: 10px;
+        font-size: 17px;
+      }
+
+      h2 {
+        margin: 5px;
+        font-size: 15px;
+      }
+
+      h3 {
+        font-size: 14px;
+        padding-left: 5px;
+        margin: 5px 0 5px 0;
+      }
+
+      h5 {
+        margin: 5px;
+        font-size: 12px;
+      }
+
+      b {
+        font-size: 13px;
+        padding: 5px;
+        margin: 5px;
+      }
+
+      i {
+        margin: 5px;
+        font-size: 13px;
+      }
+
+      li {
+        margin: 5px;
+        font-size: 13px;
+      }
+    }
+  }
 }
+  @media only screen and (max-width: 1199px) and (min-width: 320px) {
+    .boxpageqa .row .left {
+      width: 0;
+    }
+
+    .boxpageqa .row .center {
+      width: 100%;
+    }
+
+    .boxpageqa .row .right {
+      width: 0;
+    }
+
+    .head-r {
+      top: 0;
+      right: 0;
+      width: 320px;
+      transform: none;
+      transform-origin: bottom;
+      position: center;
+      padding-top: 5px;
+
+      .icon {
+        font-size: 20px;
+        box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.3);
+      }
+    }
+  }

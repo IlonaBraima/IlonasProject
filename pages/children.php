@@ -24,6 +24,18 @@
 <div>
 	<div class="header">
 		<div class="logo"><h1>Ilona Braima</h1></div>
+        <div class="navbar">
+            <div class="dropdown">
+                <button class="dropbtn">My life projects<span class="fa fa-caret-down"></span></button>
+                <div class="dropdown-content">
+                    <a href="../index.php">На главную</a>
+                    <a href="../pages/date.php">Проект: Мои 100 свиданий</a>
+                    <a href="../pages/QA.php">Проект: QA/Software tester</a>
+                    <a href="../pages/honest_relationship.html">Проект: Честные отношения</a>
+                    <a href="../pages/mybodylove.php">Проект: Моё тело</a>
+                </div>
+            </div>
+        </div>
 		<div class="menu"><div class="menu-item">
 					<a class="menu-link" href="../index.php">На главную</a>
 				</div>
@@ -35,7 +47,7 @@
 				</div>
 		</div>
 	</div>
-	<div class=head-r>
+	<div class="head-r">
         <div class="flex just-center">
             <?php
             while ($icon = $iconResult->fetch_assoc()) {
@@ -45,7 +57,7 @@
         </div>
 	</div>
 
-	<div class=head-l>
+	<div class="head-l">
 				<div>
 					<a class="linker" href="../index.php">HOME</a>
 				</div>

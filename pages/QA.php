@@ -1,9 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php
+include('../uzdevumi/datubaze.php');
+$iconSelect = "SELECT * FROM `head_right`";
+$iconResult = $conn->query($iconSelect);
+?>
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../styles/QA.css" type="text/css">
+    <link rel="stylesheet" href="../fonts/css/all.css" type="text/css">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no, viewport-fit=cover" />
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto@1&display=swap" rel="stylesheet">
@@ -12,14 +20,88 @@
 </head>
 
 <body>
-        <div class="header">
-            <div class="menu">
-                <div class="menu-item"><a class="menu-link" href="../index.php">ABOUT MI</a></div>
-            </div>
-        </div>
+
+<a class="fa fa-angle-double-up iconhome" title="HOME" href="QA.php"><br/><img
+                src="../images/qaimages/playday/bug.jpg" alt="up"></a>
+
+        <div class="header"></div>
+
+<div class="head-r">
+    <div class="just-center">
+        <?php
+        while ($icon = $iconResult->fetch_assoc()) {
+            echo  '<a href="' . $icon['adres'] . '"class="' . $icon['fonts'] . '"title="' . $icon['title'] . '"></a>';
+        }
+        ?>
+    </div>
+</div>
+
         <div class="boxpageqa">
-            <div class="row first">
-                <div class="left"><a class="logo" href="../index.php">Ilona Braima</a></div>
+            <div class="row">
+                <div class="left"></div>
+                <div class="center">
+                    <p>
+                        Я всегда считала, что родилась слишком рано. На лет 15-20 точно. Я не разделяю охи-вздохи, а вот «в наше время»,
+                        «вот у нас было детство». Сейчас читают книги, даже те, кто не любил читать, потому что это модно, ведь противоречит
+                        современным технологиям. Я любила читать книги, выписывала журналы и газеты, жила в библиотеках, но время прошло,
+                        сейчас другое, недоступное тогда. Идти против волны вообще было актуально во все века.
+                    </p>
+                    <p>
+                        Я другая, я обожаю современные блага и технологии. Ни в коем не случае не буду рвать опу ради последнего и даже
+                        предпредпоследнего айфона, но буду пользоваться тем, что мне доступно.
+                    </p>
+                    <p>
+                        Очень люблю Фейсбук и Инстаграм, в меру своих возможностей не упущу шанса посовершенствоваться,
+                        поэтому шаг за шагом вхожу в IT.</p>
+                    <br/>
+                    <div class="string">
+                        <div class="string-link">
+                            <div class="navbar">
+                                <div class="dropdown">
+                            <div class="logo dropbtn">Ilona Braima <br/> Home page<span class="fa fam fa-caret-right"></span></div>
+                                    <div class="dropdown-content">
+                                        <a href="../index.php">Home page</a>
+                                        <a href="../pages/date.php">Проект: Мои 100 свиданий</a>
+                                        <a href="../pages/children.php">Проект: Дети</a>
+                                        <a href="../pages/QA.php">Проект: QA/Software tester</a>
+                                        <a href="../pages/honest_relationship.html">Проект: Честные отношения</a>
+                                        <a href="../pages/mybodylove.php">Проект: Моё тело</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="string-link">
+                            <div class="navbar">
+                                <div class="dropdown">
+                                    <div class="dropbtn">All test projects<span class="fa fa-caret-down"></span></div>
+                                    <div class="dropdown-content">
+                                        <a class="hiper" href="#mindcard">MindCard Playday</a>
+                                        <a class="hiper" href="#sitechco">Чек-листы в Sitechco.ru</a>
+                                        <a class="hiper" href="#mantis">Тестируем Mantis Bug Tracker</a>
+                                        <a class="hiper" href="#bugzilla">Тестируем Bugzilla Bug Tracker</a>
+                                        <a class="hiper" href="#jira">Добавляем баг в Jira</a>
+                                        <a class="hiper" href="#redmine">Оформляем баги в Redmine</a>
+                                        <a class="hiper" href="#transition">State Transition Playday.lv</a>
+                                        <a class="hiper" href="#testlink">Тест кейсы в TestLink</a>
+                                        <a class="hiper" href="#users">Users — добавить задание сотруднику</a>
+                                        <a class="hiper" href="#stul">Тестируем стул!</a>
+                                        <a class="hiper" href="#moneytour">Исследовательское тестирование: Денежный тур (Money Tour)</a>
+                                        <a class="hiper" href="#poisk">Дана задача  по строке "Поиск"</a>
+                                        <a class="hiper" href="#clasiktest">Классификация тестов по приложению</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right"></div>
+            </div>
+
+
+
+
+            <div class="row">
+                <div class="left"></div>
                     <div class="center">
                         <h1>Проект тестировщика ПО</h1>
                         <table>
@@ -35,35 +117,15 @@
                             </tr>
                         </table>
                         <h1>О проекте</h1>
-                        <img class="firstimg" src="../images/qaimages/playday/playday.png" alt="Фото1" title="playday">
+                        <img src="../images/qaimages/playday/playday.png" alt="Фото1" title="playday" width="100%">
                     </div>
-                <div class="right">
-                    <div class="borderbody"><a class="hiper" href="#mindcard">MindCard Playday</a>
-                    <br/>
-                    <a class="hiper" href="#sitechco">Чек-листы в Sitechco.ru</a>
-                    <br/>
-                     <a class="hiper" href="#mantis">Тестируем Mantis Bug Tracker</a>
-                    <br/>
-                    <a class="hiper" href="#bugzilla">Тестируем Bugzilla Bug Tracker</a>
-                    <br/>
-                     <a class="hiper" href="#jira">Добавляем баг в Jira</a>
-                    <br/>
-                    <a class="hiper" href="#redmine">Оформляем баги в Redmine</a>
-                    <br/>
-                    <a class="hiper" href="#transition">State Transition Playday.lv</a>
-                    <br/>
-                    <a class="hiper" href="#testlink">Тест кейсы в TestLink</a>
-                    <br/>
-                    <a class="hiper" href="#users">Users — добавить задание сотруднику</a>
-                    <br/>
-                    <a class="hiper" href="#stul">Тестируем стул!</a>
-                    <br/>
-                    <a class="hiper" href="#moneytour">Исследовательское тестирование: Денежный тур (Money Tour)</a>
-                    <br/>
-                    <a class="hiper" href="#poisk">Дана задача  по строке "Поиск"</a>
-                    <br/>
-                    <a class="hiper"href="#clasiktest">Классификация тестов по приложению</a>
-                </div>
+                <div class="right"></div>
+            </div>
+
+            <div class="row">
+                <div class="left"></div>
+                    <div class="center"></div>
+                <div class="right"></div>
             </div>
 
             <div class="row">
@@ -77,22 +139,14 @@
                             организованные Play Day праздники, фестивали и др мероприятия в помещениях и
                             на улице, куда приглашаются все желающие.
                         </p>
+                        <h1 id="mindcard">MindCard PlayDay</h1>
+                            <img src="../images/qaimages/playday/MindCard.png" alt="Фото1" title="playday" width="100%">
                     </div>
                 <div class="right"></div>
             </div>
 
             <div class="row">
                 <div class="left"></div>
-                    <div class="center">
-                        <h1 id="mindcard">MindCard PlayDay</h1>
-                            <img src="playday/MindCard.png" alt="Фото1" title="playday" width="100%">
-                    </div>
-                <div class="right"></div>
-            </div>
-
-            <div class="row">
-                <div class="left">
-                </div>
                     <div class="center">
                         <h1 id="sitechco">
                             Чек-листы в Sitechco.ru
@@ -104,14 +158,11 @@
                         <img src="../images/qaimages/playday/4.png" alt="Иллюстрация" width="100%">
                         <img src="../images/qaimages/playday/7.png" alt="Иллюстрация" width="100%">
                     </div>
-                <div class="right"><a class="iconhome" title="HOME" href="../index.html"><img
-                                    src="../images/qaimages/playday/bug.jpg" alt="Home"></a>
-                </div>
+                <div class="right"></div>
             </div>
 
             <div class="row">
-                <div class="left">
-                </div>
+                <div class="left"></div>
                     <div class="center">
                             <h1 id="mantis">
                                 Тестируем Mantis Bug Tracker
@@ -125,9 +176,7 @@
                         <img src="../images/qaimages/playday/11.png" alt="Иллюстрация" width="100%">
                         <img src="../images/qaimages/playday/12.png" alt="Иллюстрация" width="100%">
                     </div>
-                <div class="right"><a class="iconhome" title="HOME" href="../index.html"><img
-                                    src="../images/qaimages/playday/bug.jpg" alt="Home"></a>
-                </div>
+                <div class="right"></div>
             </div>
             <div class="row">
                 <div class="left">
@@ -141,22 +190,17 @@
                         </p>
                         <img src="../images/qaimages/bug3.png" alt="Иллюстрация" width="100%">
                     </div>
-                <div class="right"><a class="iconhome" title="HOME" href="../index.html"><img
-                                    src="../images/qaimages/playday/bug.jpg" alt="Home"></a>
-                </div>
+                <div class="right"></div>
             </div>
 
             <div class="row">
-                <div class="left">
-                </div>
+                <div class="left"></div>
                     <div class="center">
                         <h1 id="jira"> Добавляем баг в Jira</h1>
                         <img src="../images/qaimages/11.png" alt="Иллюстрация" width="100%">
                         <img src="../images/qaimages/10.png" alt="Иллюстрация" width="100%">
                     </div>
-                <div class="right"><a class="iconhome" title="HOME" href="../index.html"><img
-                                    src="../images/qaimages/playday/bug.jpg" alt="Home"></a>
-                </div>
+                <div class="right"></div>
             </div>
 
             <div class="row">
@@ -167,25 +211,20 @@
                         <img src="../images/qaimages/redmine1.png" alt="Иллюстрация" width="100%">
                         <img src="../images/qaimages/redmine2.png" alt="Иллюстрация" width="100%">
                         <p>Как должно быть:</p>
-                        <img src="images/1.jpg" alt="Иллюстрация" width="100%">
-                        <img src="images/redmine3.png" alt="Иллюстрация" width="100%">
+                        <img src="../images/qaimages/1.jpg" alt="Иллюстрация" width="100%">
+                        <img src="../images/qaimages/redmine3.png" alt="Иллюстрация" width="100%">
                     </div>
-                <div class="right"><a class="iconhome" title="HOME" href="../index.html"><img
-                                    src="../images/qaimages/playday/bug.jpg" alt="Home"></a>
-                </div>
+                <div class="right"></div>
             </div>
 
             <div class="row">
-                <div class="left">
-                </div>
+                <div class="left"></div>
                     <div class="center">
                         <h1 id="testlink">Тест кейсы в TestLink</h1>
                         <img src="../images/qaimages/playday/13.png" alt="Иллюстрация" width="100%">
                         <img src="../images/qaimages/playday/14.png" alt="Иллюстрация" width="100%">
                     </div>
-                <div class="right"><a class="iconhome" title="HOME" href="../index.html"><img
-                                    src="../images/qaimages/playday/bug.jpg" alt="Home"></a>
-                </div>
+                <div class="right"></div>
             </div>
 
             <div class="row">
@@ -195,14 +234,11 @@
                         <h1 id="transition"> State Transition Playday.lv</h1>
                         <img src="../images/qaimages/9.png" alt="Иллюстрация" width="100%">
                     </div>
-                <div class="right"><a class="iconhome" title="HOME" href="../index.html"><img
-                                    src="../images/qaimages/playday/bug.jpg" alt="Home"></a>
-                </div>
+                <div class="right"></div>
             </div>
 
             <div class="row">
-                <div class="left">
-                </div>
+                <div class="left"></div>
                 <div class="center">
                     <h1 id="moneytour">Исследовательское тестирование: Денежный тур (Money Tour) Уиттакера на Playday.lv</h1>
                     <p>
@@ -344,14 +380,11 @@
                         5) Требуется поработать над тем, чтобы кнопки главного меню приобрели единый стиль и функциональность.
                     </p>
                 </div>
-                <div class="right"><a class="iconhome" title="HOME" href="../index.html"><img
-                                    src="../images/qaimages/playday/bug.jpg" alt="Home"></a>
-                </div>
+                <div class="right"></div>
             </div>
 
             <div class="row">
-                <div class="left">
-                </div>
+                <div class="left"></div>
                     <div class="center">
                         <h1 id="users">Users — добавить задание сотруднику</h1>
                         <h3>Задача</h3>
@@ -448,7 +481,7 @@
                             <i>Комментарий</i>: Трудно было понять, что за «фраза» - не кнопка, не опция, а почему-то фраза.
                         Всё остальное понятно и ок.
                         </p>
-                        <img src="../images/qaimages/7.png"alt="Иллюстрация"width="100%">
+                        <img src="../images/qaimages/7.png" alt="Иллюстрация"width="100%">
                         <p>
                             3) Если нажать на число слева от фразы «1 задание» (количество уведомлений), то попадем на страницу
                         «Все непрочитанные уведомления», а там в таблице верхняя строка будет такой:
@@ -464,14 +497,11 @@
                         </p>
                         <img src="../images/qaimages/8.png" alt="Иллюстрация" width="100%">
                     </div>
-                <div class="right"><a class="iconhome" title="HOME" href="../index.html"><img
-                                    src="../images/qaimages/playday/bug.jpg" alt="Home"></a>
-                </div>
+                <div class="right"></div>
             </div>
 
             <div class="row">
-                <div class="left">
-                </div>
+                <div class="left"></div>
                     <div class="center">
 
                         <h1 id="stul"> Тестируем стул!</h1>
@@ -479,8 +509,8 @@
                             "Вы прислали мне своё резюме и я дала тестовое задание — протестировать стул".
                         </p>
                         <p>
-                            <b>Ваши действия? Как будете исследовать продукт, когда он попадет к вам в руки? Н
-                                акидайте проверки.</b>
+                            <b>Ваши действия? Как будете исследовать продукт, когда он попадет к вам в руки?
+                                Накидайте проверки.</b>
                         </p>
                         <h1>Тестируемый продукт – теннисный судейский стул (вышка)</h1>
                         <h4>Проверяем требования заказчика.</h4>
@@ -549,14 +579,11 @@
                             Стул прошёл тестирование, можно закупать партию.
                         </p>
                     </div>
-                <div class="right"><a class="iconhome" title="HOME" href="../index.html"><img
-                                    src="../images/qaimages/playday/bug.jpg" alt="Home"></a>
-                </div>
+                <div class="right"></div>
             </div>
 
             <div class="row">
-                <div class="left">
-                </div>
+                <div class="left"></div>
                     <div class="center">
                         <h1 id="poisk">
                             Дана задача  по строке "Поиск"
@@ -618,13 +645,10 @@
                             Столько тестов, сколько необходимо, чтобы проверить, что поиск работает по ТЗ.
                         </p>
                     </div>
-                <div class="right"><a class="iconhome" title="HOME" href="../index.html"><img
-                                    src="../images/qaimages/playday/bug.jpg" alt="Home"></a>
-                </div>
+                <div class="right"></div>
             </div>
         <div class="row">
-            <div class="left">
-            </div>
+            <div class="left"></div>
             <div class="center">
                 <h1 id="clasiktest">
                     Классификация тестов по приложению
@@ -642,14 +666,15 @@
                     <li>Определить количество пользователей, одновременно работающих с приложением</li>
                 </ul>
                 <br/>
-                <ul>Нагрузочные тесты (Load testing)
+                <b>Нагрузочные тесты (Load testing)</b>
+                <ul>
                     <li>Сымитировать вход на сайт одновременно 5000 пользователей</li>
                 </ul>
                 <br/>
                 <b>Тестирование надежности (Reliability testing)</b>
                 <ul>
-                    Проверить, что сайт может работать под нагрузкой (посещение сайта меняется от 0 до 50 000
-                    посетителей) 5 дней подряд.
+                    <li>Проверить, что сайт может работать под нагрузкой (посещение сайта меняется от 0 до 50 000
+                    посетителей) 5 дней подряд.</li>
                 </ul>
                 <br/>
                 <b>Тестирование совместимости (Compatibility testing)</b>
@@ -686,7 +711,8 @@
                 <br/>
                 <h2>Форматы тестирования</h2>
                 <br/>
-                <b>Скриптовое тестирование (по тестам):</b> для каких (конкретно) частей продукта и в каких случаях будет полезнее всего?
+                <b>Скриптовое тестирование (по тестам):</b> для каких (конкретно) частей продукта и в каких случаях
+                будет полезнее всего?
                 <ul>
                     <li>Тестирование бронирования заказа</li>
                     <li>Тестирование оформления заказа</li>
@@ -706,11 +732,12 @@
                     на регулярную проверку)
                 </ul>
             </div>
-                        <div class="right"><a class="iconhome" title="HOME" href="../index.html"><img
-                                            src="../images/qaimages/playday/bug.jpg" alt="Home"></a>
+                        <div class="right">
                         </div>
     </div>
 
-
+            <footer class="footer">
+                <p>© 2021 Ilona Braim, по всем вопросам пишите по адресу anoli2004@inbox.lv</p>
+            </footer>
 </body>
 </html>
