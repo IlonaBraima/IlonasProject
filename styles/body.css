@@ -57,7 +57,7 @@ body {
 .head-l {
   bottom: 0;
   right: 0;
-  width: 100vh;
+  width: 50px;
   position: fixed;
   text-align: center;
   font-size: 60px;
@@ -132,6 +132,17 @@ body {
 }
 .boxpage .col .item:hover {
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+@media only screen and (max-width: 1600px) and (min-width: 1200px) {
+  .boxpage {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .header {
+    width: 1200px;
+  }
 }
 
 /*# sourceMappingURL=body.css.map */

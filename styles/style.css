@@ -438,4 +438,7 @@ body {
     background: linear-gradient(to bottom,#eee 0%,#fff 100%);
 }
 
+p {
+    padding-bottom: 10px;
+}
 
