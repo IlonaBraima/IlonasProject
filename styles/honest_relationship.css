@@ -114,6 +114,27 @@ body {
     padding: 0 5px;
   }
 }
+.ttt .rrr {
+  width: 200px;
+  height: 100px;
+  overflow: hidden;
+}
+.ttt .open {
+  color: red;
+}
+.ttt .close {
+  display: none;
+}
+.ttt.active .rrr {
+  height: auto;
+}
+.ttt.active .open {
+  display: none;
+}
+.ttt.active .close {
+  display: block;
+}
+
 /*# sourceMappingURL=honest_relationship.css.map */
 
 /*# sourceMappingURL=honest_relationship.css.map */

@@ -144,5 +144,44 @@ body {
     width: 1200px;
   }
 }
+@media only screen and (max-width: 1190px) and (min-width: 820px) {
+  .boxpage {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .boxpage .col {
+    width: 48%;
+  }
+
+  .header {
+    width: 800px;
+  }
+}
+@media only screen and (max-width: 819px) and (min-width: 600px) {
+  .boxpage {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .boxpage .col {
+    width: 90%;
+  }
+
+  .header {
+    width: 600px;
+  }
+}
+@media only screen and (max-width: 599px) and (min-width: 320px) {
+  .boxpage {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  .boxpage .col {
+    width: 90%;
+  }
+
+  .header {
+    width: 320px;
+  }
+}
 
 /*# sourceMappingURL=body.css.map */

@@ -134,4 +134,30 @@ body {
   }
 }
 
+
+.ttt {
+  .rrr {
+    width: 200px;
+    height: 100px;
+    overflow: hidden;
+  }
+  .open {
+    color: red;
+  }
+  .close {
+    display: none;
+  }
+  &.active {
+    .rrr {
+      height: auto;
+    }
+    .open {
+      display: none;
+    }
+    .close {
+      display: block;
+    }
+  }
+}
+
 /*# sourceMappingURL=honest_relationship.css.map */
