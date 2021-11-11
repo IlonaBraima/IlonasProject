@@ -354,12 +354,6 @@
 
 
 
-
-		<img src="../images/ja2.jpg" alt="Фото1" title="ja2" width="200">
-
-		<img src="../images/ja5.jpg" alt="Фото3" title="ja5" width="200">
-		<img src="../images/ja6.jpg" alt="Фото4" title="ja4" width="200"><
-		<img src="../images/ja1.jpg" alt="Фото5" title="ja5" width="200">
                 <canvas id=c></canvas>
                 <canvas id=bg></canvas></div>
 <script src="script.js"></script>
