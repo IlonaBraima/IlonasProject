@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)http://www.ilonasdiary.lv/pages/QA.php -->
+<html lang="en" data-adreal-did="1676652822038610" data-lt-installed="true"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <link rel="stylesheet" href="./QA_files/QA.css" type="text/css">
+    <link rel="stylesheet" href="./QA_files/all.css" type="text/css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no, viewport-fit=cover">
+    <link href="./QA_files/css2" rel="stylesheet">
+    <link href="./QA_files/css2(1)" rel="stylesheet">
+    <link href="./QA_files/css2(2)" rel="stylesheet">
+    <title>QA</title>
+<script type="text/javascript"> 
+/* 
+ * Chrome token signing extension 
+ * 
+ * This library is free software; you can redistribute it and/or 
+ * modify it under the terms of the GNU Lesser General Public 
+ * License as published by the Free Software Foundation; either 
+ * version 2.1 of the License, or (at your option) any later version. 
+ * 
+ * This library is distributed in the hope that it will be useful, 
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of 
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU 
+ * Lesser General Public License for more details. 
+ * 
+ * You should have received a copy of the GNU Lesser General Public 
+ * License along with this library; if not, write to the Free Software 
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA 
+ */ 
+ 
+// Promises 
+var _eid_promises = {}; 
+// Turn the incoming message from extension 
+// into pending Promise resolving 
+window.addEventListener("message", function(event) { 
+    if(event.source !== window) return; 
+    if(event.data.src && (event.data.src === "eparaksts-background.js")) { 
+        console.log("Page received: "); 
+        console.log(event.data); 
+        // Get the promise 
+        if(event.data.nonce) { 
+            var p = _eid_promises[event.data.nonce]; 
+            // resolve 
+            if(p !== undefined) { 
+                if(event.data.result === "ok") { 
+                    if(event.data.signature !== undefined) { 
+                        p.resolve({hex: event.data.signature}); 
+                    } else if(event.data.version !== undefined && event.data.extension !== undefined) { 
+                        p.resolve(event.data.version + "/js" + event.data.extension); 
+                    } else if(event.data.cert !== undefined) { 
+                        p.resolve({hex: event.data.cert}); 
+                    } else { 
+                        console.log("No idea how to handle message"); 
+                        console.log(event.data); 
+                    } 
+                } else { 
+                    // reject 
+                    p.reject(new Error(event.data.result)); 
+                } 
+            } else { 
+            	console.log("Undefined promise"); 
+            } 
+            delete _eid_promises[event.data.nonce]; 
+        } else { 
+            console.log("No nonce in event msg"); 
+        } 
+    } 
+}, false); 
+ 
+ 
+function eParakstsTokenSigning() { 
+    function nonce() { 
+        var val = ""; 
+        var hex = "abcdefghijklmnopqrstuvwxyz0123456789"; 
+        for(var i = 0; i < 16; i++) val += hex.charAt(Math.floor(Math.random() * hex.length)); 
+        return val; 
+    } 
+ 
+    function messagePromise(msg) { 
+        return new Promise(function(resolve, reject) { 
+            // amend with necessary metadata 
+            msg["nonce"] = nonce(); 
+            msg["src"] = "eparaksts-page.js"; 
+            // send message 
+            window.postMessage(msg, "*"); 
+            // and store promise callbacks 
+            _eid_promises[msg.nonce] = { 
+                resolve: resolve, 
+                reject: reject 
+            }; 
+        }); 
+    } 
+    this.getCertificate = function(options) { 
+        var msg = {type: "CERT", lang: options.lang, operation: options.operation}; 
+        console.log("getCertificate()"); 
+        return messagePromise(msg); 
+    }; 
+    this.sign = function(cert, hash, options) { 
+        var msg = {type: "SIGN", cert: cert.hex, hash: hash.hex, hashtype: hash.type, lang: options.lang, operation: options.operation}; 
+        console.log("sign()"); 
+        return messagePromise(msg); 
+    }; 
+    this.getVersion = function() { 
+        console.log("getVersion()"); 
+        return messagePromise({ 
+            type: "VERSION" 
+        }); 
+    }; 
+} 
+</script><style data-cursor="cursor">body,
+        input[type=range]::-webkit-slider-thumb,
+        input[type=range]::-webkit-slider-runnable-track {
+          cursor: url("data:image/svg+xml,%3C!--%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F--%3E%0A%3C!--%20Generator%3A%20Adobe%20Illustrator%2024.2.3%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200)%20%20--%3E%0A%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%20viewBox%3D%220%200%201024%201024%22%20style%3D%22enable-background%3Anew%200%200%201024%201024%3B%22%20xml%3Aspace%3D%22preserve%22%20width%3D%2224px%22%20height%3D%2224px%22%3E%0A%3Cstyle%20type%3D%22text%2Fcss%22%3E%0A%09.st0%7Bfill%3A%23953CCF%3B%7D%0A%09.st1%7Bfill%3A%23656566%3B%7D%0A%09.st2%7Bfill%3A%23545456%3B%7D%0A%09.st3%7Bfill%3A%23BE6FE6%3B%7D%0A%09.st4%7Bfill%3A%23A125E4%3B%7D%0A%09.st5%7Bfill%3A%237C25B0%3B%7D%0A%3C%2Fstyle%3E%0A%3Cpolygon%20class%3D%22st0%22%20points%3D%220%2C164.5%200%2C0%20164.5%2C0%20%22%3E%3C%2Fpolygon%3E%0A%3Cpath%20class%3D%22st1%22%20d%3D%22M893.3%2C928.9c44.1-48.4%2C40.6-123.6-7.8-167.8l-107.5-99.7c-16.2%2C9.2-30.4%2C24.2-38.5%2C42.3L847%2C803.4%0A%09c25.1%2C22.9%2C26.9%2C61.9%2C4%2C87c-23.9%2C26.2-64.7%2C28.1-91%2C4.2c-11.7-10.6-29.7-9.8-40.4%2C1.9c-10.6%2C11.7-9.8%2C29.7%2C1.9%2C40.4%0A%09C771.1%2C982%2C848.2%2C978.5%2C893.3%2C928.9z%22%3E%3C%2Fpath%3E%0A%3Cpath%20class%3D%22st2%22%20d%3D%22M865.5%2C780.1c47.3%2C43.1%2C51.7%2C116%2C10.7%2C164.4c6.1-4.6%2C11.9-9.7%2C17.2-15.6c44.1-48.4%2C40.6-123.6-7.8-167.8%0A%09l-107.5-99.7c-7.9%2C4.5-15.3%2C10.3-21.8%2C17.2C886.5%2C799.6%2C862.5%2C777.3%2C865.5%2C780.1z%22%3E%3C%2Fpath%3E%0A%3Cpath%20class%3D%22st3%22%20d%3D%22M635.8%2C839.2c8.3-1%2C14.9-7.2%2C16.6-15.4c7.4-35.1%2C36.5-62.2%2C73-66.4c5.8-0.7%2C10.1-5.5%2C10.1-11.3%0A%09c-0.2-46.4%2C35.6-86.6%2C82.7-90.8c5.8-0.5%2C10.2-5.3%2C10.4-11.2c0.9-38.6%2C27.7-71.3%2C64.8-80.2c5.2-1.2%2C8.7-6.1%2C8.5-11.5%0A%09c-0.8-16.6%2C5.5-37.3%2C13.8-54.1c3.4-7%2C0.3-15.4-6.8-18.7L253.5%2C181.9l-0.9-0.8c-3.2%2C6.2-5.9%2C7.7-20%2C23.6%0A%09C218%2C220.2%2C216.9%2C223%2C211%2C226.8l0.9%2C0.8l357.1%2C625c3.8%2C6.7%2C12.5%2C9%2C19.1%2C5C602.5%2C848.8%2C620.2%2C841.2%2C635.8%2C839.2z%22%3E%3C%2Fpath%3E%0A%3Cg%3E%0A%09%3Cpath%20class%3D%22st4%22%20d%3D%22M846.6%2C593.9c11.5-14.6%2C27.8-25.4%2C46.7-29.9c5.2-1.2%2C8.7-6.1%2C8.5-11.5c-0.8-16.6%2C5.5-37.3%2C13.8-54.1%0A%09%09c3.4-7%2C0.3-15.4-6.8-18.7L253.5%2C181.9l-0.9-0.8c-1.6%2C3-3%2C5-5.7%2C7.9L846.6%2C593.9z%22%3E%3C%2Fpath%3E%0A%09%3Cpath%20class%3D%22st4%22%20d%3D%22M799.8%2C659c16.8-5.1%2C20.3-1.8%2C25.4-6.9L240.3%2C196.4l-15.3%2C16.7l507.8%2C540.3c5.2-6.2-0.2-15.2%2C7.8-37.7%0A%09%09C749.7%2C690.1%2C771.1%2C667.8%2C799.8%2C659z%22%3E%3C%2Fpath%3E%0A%09%3Cpath%20class%3D%22st4%22%20d%3D%22M213.1%2C229.7L297%2C376.6l272%2C476c3.8%2C6.7%2C12.5%2C9%2C19.1%2C5c37-22.6%2C48.7-14.1%2C58.7-23.5L213.1%2C229.7z%22%3E%3C%2Fpath%3E%0A%3C%2Fg%3E%0A%3Cpath%20class%3D%22st5%22%20d%3D%22M253.5%2C181.9L899.4%2C560c4.3-5.6%2C0.7-8%2C3.6-24.6c2.2-12.5%2C7.1-26%2C12.5-37c3.4-7%2C0.3-15.4-6.8-18.7l-201.5-91.6%0A%09L253.5%2C181.9z%22%3E%3C%2Fpath%3E%0A%3Cpath%20class%3D%22st1%22%20d%3D%22M208.2%2C152c1.7-1.9%2C3.7-3.5%2C5.7-4.8L174.5%2C113c-11.7-10.6-29.7-9.8-40.4%2C1.9s-9.8%2C29.7%2C1.9%2C40.4l39.5%2C34.3%0A%09C178.6%2C183.4%2C179.8%2C183.8%2C208.2%2C152z%22%3E%3C%2Fpath%3E%0A%3Cpath%20class%3D%22st2%22%20d%3D%22M158.5%2C135.3l36.4%2C31.6c14.3-15.6%2C14.5-16.7%2C19.2-19.6L174.5%2C113c-17.3-15.7-44.8-5.1-47.6%2C17.6%0A%09C137.1%2C125.8%2C149.6%2C127.2%2C158.5%2C135.3z%22%3E%3C%2Fpath%3E%0A%3Cpath%20class%3D%22st1%22%20d%3D%22M178.7%2C222.8l-0.5-0.5c-11.8-10.7-12.6-29.1-1.9-40.9l28.1-30.8c10.7-11.8%2C29.1-12.6%2C40.9-1.9l0.5%2C0.5%0A%09c11.8%2C10.7%2C12.6%2C29.1%2C1.9%2C40.9l-28.1%2C30.8C208.9%2C232.7%2C190.5%2C233.5%2C178.7%2C222.8z%22%3E%3C%2Fpath%3E%0A%3Cpath%20class%3D%22st2%22%20d%3D%22M213.9%2C183.7L213.9%2C183.7c11.2%2C10.2%2C12.6%2C27.3%2C3.7%2C39.2c2-1.8%2C0.2-0.1%2C30.1-32.8c10.7-11.8%2C9.9-30.2-1.9-40.9%0A%09l-0.5-0.5c-11.8-10.7-30.2-9.9-40.9%2C1.9c-29.7%2C32.7-28.3%2C30.8-29.8%2C33C185.5%2C173.7%2C202.7%2C173.5%2C213.9%2C183.7z%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E%0A") 0 0, default !important;
+        }
+        
+        a, 
+        button, 
+        .cursorsHover {
+          cursor: url("data:image/svg+xml,%3C!--%3Fxml%20version%3D%221.0%22%20encoding%3D%22utf-8%22%3F--%3E%0A%3C!--%20Generator%3A%20Adobe%20Illustrator%2024.2.3%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200)%20%20--%3E%0A%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%20viewBox%3D%220%200%201024%201024%22%20style%3D%22enable-background%3Anew%200%200%201024%201024%3B%22%20xml%3Aspace%3D%22preserve%22%20width%3D%2224px%22%20height%3D%2224px%22%3E%0A%3Cstyle%20type%3D%22text%2Fcss%22%3E%0A%09.st0%7Bfill%3A%23953CCF%3B%7D%0A%09.st1%7Bfill%3A%23656566%3B%7D%0A%09.st2%7Bfill%3A%23545456%3B%7D%0A%09.st3%7Bfill%3A%2356576C%3B%7D%0A%09.st4%7Bfill%3A%23A023E3%3B%7D%0A%09.st5%7Bfill%3A%237C25B0%3B%7D%0A%09.st6%7Bfill%3A%23BE70E6%3B%7D%0A%3C%2Fstyle%3E%0A%3Cpolygon%20class%3D%22st0%22%20points%3D%220%2C164.5%200%2C0%20164.5%2C0%20%22%3E%3C%2Fpolygon%3E%0A%3Cpath%20class%3D%22st1%22%20d%3D%22M893.3%2C928.9c44.1-48.4%2C40.6-123.6-7.8-167.8l-107.5-99.7c-16.2%2C9.2-30.4%2C24.2-38.5%2C42.3L847%2C803.4%0A%09c25.1%2C22.9%2C26.9%2C61.9%2C4%2C87c-23.9%2C26.2-64.7%2C28.1-91%2C4.2c-11.7-10.6-29.7-9.8-40.4%2C1.9c-10.6%2C11.7-9.8%2C29.7%2C1.9%2C40.4%0A%09C771.1%2C982%2C848.2%2C978.5%2C893.3%2C928.9z%22%3E%3C%2Fpath%3E%0A%3Cpath%20class%3D%22st2%22%20d%3D%22M865.5%2C780.1c47.3%2C43.1%2C51.7%2C116%2C10.7%2C164.4c6.1-4.6%2C11.9-9.7%2C17.2-15.6c44.1-48.4%2C40.6-123.6-7.8-167.8%0A%09l-107.5-99.7c-7.9%2C4.5-15.3%2C10.3-21.8%2C17.2C886.5%2C799.6%2C862.5%2C777.3%2C865.5%2C780.1z%22%3E%3C%2Fpath%3E%0A%3Cpath%20class%3D%22st1%22%20d%3D%22M208.2%2C152c1.7-1.9%2C3.7-3.5%2C5.7-4.8L174.5%2C113c-11.7-10.6-29.7-9.8-40.4%2C1.9s-9.8%2C29.7%2C1.9%2C40.4l39.5%2C34.3%0A%09C178.6%2C183.4%2C179.8%2C183.8%2C208.2%2C152z%22%3E%3C%2Fpath%3E%0A%3Cpath%20class%3D%22st2%22%20d%3D%22M158.5%2C135.3l36.4%2C31.6c14.3-15.6%2C14.5-16.7%2C19.2-19.6L174.5%2C113c-17.3-15.7-44.8-5.1-47.6%2C17.6%0A%09C137.1%2C125.8%2C149.6%2C127.2%2C158.5%2C135.3z%22%3E%3C%2Fpath%3E%0A%3Cpath%20class%3D%22st1%22%20d%3D%22M178.7%2C222.8l-0.5-0.5c-11.8-10.7-12.6-29.1-1.9-40.9l28.1-30.8c10.7-11.8%2C29.1-12.6%2C40.9-1.9l0.5%2C0.5%0A%09c11.8%2C10.7%2C12.6%2C29.1%2C1.9%2C40.9l-28.1%2C30.8C208.9%2C232.7%2C190.5%2C233.5%2C178.7%2C222.8z%22%3E%3C%2Fpath%3E%0A%3Cpath%20class%3D%22st2%22%20d%3D%22M213.9%2C183.7L213.9%2C183.7c11.2%2C10.2%2C12.6%2C27.3%2C3.7%2C39.2c2-1.8%2C0.2-0.1%2C30.1-32.8c10.7-11.8%2C9.9-30.2-1.9-40.9%0A%09l-0.5-0.5c-11.8-10.7-30.2-9.9-40.9%2C1.9c-29.7%2C32.7-28.3%2C30.8-29.8%2C33C185.5%2C173.7%2C202.7%2C173.5%2C213.9%2C183.7z%22%3E%3C%2Fpath%3E%0A%3Crect%20x%3D%22569.6%22%20y%3D%22295.5%22%20transform%3D%22matrix(0.6667%20-0.7453%200.7453%200.6667%20-197.4468%20610.6551)%22%20class%3D%22st3%22%20width%3D%2228.9%22%20height%3D%22461.1%22%3E%3C%2Frect%3E%0A%3Cpath%20class%3D%22st4%22%20d%3D%22M239.3%2C830.7c7.5%2C7.8%2C20.8%2C3%2C21.5-7.8c3-48.9%2C20.1-93.8%2C52.4-129.2c36-39.4%2C85.6-61%2C140.8-65.7%0A%09c3.2-0.3%2C6-1.8%2C8.1-4L231.9%2C207.6C68.8%2C386%2C74.1%2C658.9%2C239.3%2C830.7z%22%3E%3C%2Fpath%3E%0A%3Cpath%20class%3D%22st5%22%20d%3D%22M231.9%2C207.6L811.4%2C190c11.6-3.7%2C23.6-6.4%2C35.9-8.3c10.7-1.6%2C14.3-15.3%2C5.9-22.1%0A%09C667.3%2C10.4%2C395%2C29.3%2C231.9%2C207.6L231.9%2C207.6z%22%3E%3C%2Fpath%3E%0A%3Cpath%20class%3D%22st4%22%20d%3D%22M231.9%2C207.6l435.2%2C192.3c2-2.2%2C3.3-5.2%2C3.3-8.4c-0.2-55.4%2C16.9-106.7%2C52.9-146.1%0A%09c24.1-26.3%2C54.2-44.7%2C88.1-55.4C627.3%2C46.1%2C375%2C51.1%2C231.9%2C207.6L231.9%2C207.6z%22%3E%3C%2Fpath%3E%0A%3Cpath%20class%3D%22st6%22%20d%3D%22M231.9%2C207.6C175.6%2C269.1%2C278.6%2C455%2C462.1%2C624c2-2.2%2C3.2-5.2%2C3.2-8.4c-0.2-55.4%2C16.9-106.7%2C52.9-146.1%0A%09s85.6-61%2C140.8-65.7c3.2-0.3%2C6-1.8%2C8.1-4C482.5%2C232.2%2C288.1%2C146.1%2C231.9%2C207.6L231.9%2C207.6z%22%3E%3C%2Fpath%3E%0A%3C%2Fsvg%3E%0A") 0 0, pointer !important;
+        }
+      </style></head>
+
+<body style="">
+
+<a class="fa fa-angle-double-up iconhome" title="HOME" href="http://www.ilonasdiary.lv/pages/QA.php"><br><img src="./QA_files/bug.jpg" alt="up"></a>
+
+        <div class="header"></div>
+
+<div class="head-r">
+    <div class="just-center">
+        <a href="https://www.facebook.com/ilonabraim/" class="fab icon fa-facebook-square" title="Facebook"></a><a href="https://www.linkedin.com/in/ilonabraim/" class="fab icon fa-linkedin" title="Linkedin"></a><a href="https://www.instagram.com/ilona_braim/" class="fab icon fa-instagram-square" title="Instagram"></a><a href="https://join.skype.com/invite/zUQumwuqujXp" class="fab icon fa-skype" title="Skype"></a><a href="https://wa.me/37129552519" class="fab icon fa-whatsapp-square" title="Whatsapp"></a><a href="https://t.me/Ilono4ka2021" class="fab icon fa-telegram-plane" title="Telegram"></a><a href="mailto:anoli2004@inbox.lv" class="fas icon fa-envelope-square" title="e-mail"></a>    </div>
+</div>
+
+        <div class="boxpageqa">
+            <div class="row">
+                <div class="left"></div>
+                <div class="center">
+                    <p>
+                        Я всегда считала, что родилась слишком рано. На лет 15-20 точно. Я не разделяю охи-вздохи, а вот «в наше время»,
+                        «вот у нас было детство». Сейчас читают книги, даже те, кто не любил читать, потому что это модно, ведь противоречит
+                        современным технологиям. Я любила читать книги, выписывала журналы и газеты, жила в библиотеках, но время прошло,
+                        сейчас другое, недоступное тогда. Идти против волны вообще было актуально во все века.
+                    </p>
+                    <p>
+                        Я другая, я обожаю современные блага и технологии. Ни в коем не случае не буду рвать опу ради последнего и даже
+                        предпредпоследнего айфона, но буду пользоваться тем, что мне доступно.
+                    </p>
+                    <p>
+                        Очень люблю Фейсбук и Инстаграм, в меру своих возможностей не упущу шанса посовершенствоваться,
+                        поэтому шаг за шагом вхожу в IT.</p>
+                    <br>
+                    <div class="string">
+                        <div class="string-link">
+                            <div class="navbar">
+                                <div class="dropdown">
+                            <div class="logo dropbtn">Ilona Braima <br> Home page<span class="fa fam fa-caret-right"></span></div>
+                                    <div class="dropdown-content">
+                                        <a href="http://www.ilonasdiary.lv/index.php">Home page</a>
+                                        <a href="http://www.ilonasdiary.lv/pages/date.php">Проект: Мои 100 свиданий</a>
+                                        <a href="http://www.ilonasdiary.lv/pages/children.php">Проект: Дети</a>
+                                        <a href="http://www.ilonasdiary.lv/pages/QA.php">Проект: QA/Software tester</a>
+                                        <a href="http://www.ilonasdiary.lv/pages/honest_relationship.html">Проект: Честные отношения</a>
+                                        <a href="http://www.ilonasdiary.lv/pages/mybodylove.php">Проект: Моё тело</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="string-link">
+                            <div class="navbar">
+                                <div class="dropdown">
+                                    <div class="dropbtn">All test projects<span class="fa fa-caret-down"></span></div>
+                                    <div class="dropdown-content">
+                                        <a class="hiper" href="http://www.ilonasdiary.lv/pages/QA.php#mindcard">MindCard Playday</a>
+                                        <a class="hiper" href="http://www.ilonasdiary.lv/pages/QA.php#sitechco">Чек-листы в Sitechco.ru</a>
+                                        <a class="hiper" href="http://www.ilonasdiary.lv/pages/QA.php#mantis">Тестируем Mantis Bug Tracker</a>
+                                        <a class="hiper" href="http://www.ilonasdiary.lv/pages/QA.php#bugzilla">Тестируем Bugzilla Bug Tracker</a>
+                                        <a class="hiper" href="http://www.ilonasdiary.lv/pages/QA.php#jira">Добавляем баг в Jira</a>
+                                        <a class="hiper" href="http://www.ilonasdiary.lv/pages/QA.php#redmine">Оформляем баги в Redmine</a>
+                                        <a class="hiper" href="http://www.ilonasdiary.lv/pages/QA.php#transition">State Transition Playday.lv</a>
+                                        <a class="hiper" href="http://www.ilonasdiary.lv/pages/QA.php#testlink">Тест кейсы в TestLink</a>
+                                        <a class="hiper" href="http://www.ilonasdiary.lv/pages/QA.php#users">Users — добавить задание сотруднику</a>
+                                        <a class="hiper" href="http://www.ilonasdiary.lv/pages/QA.php#stul">Тестируем стул!</a>
+                                        <a class="hiper" href="http://www.ilonasdiary.lv/pages/QA.php#moneytour">Исследовательское тестирование: Денежный тур (Money Tour)</a>
+                                        <a class="hiper" href="http://www.ilonasdiary.lv/pages/QA.php#poisk">Дана задача  по строке "Поиск"</a>
+                                        <a class="hiper" href="http://www.ilonasdiary.lv/pages/QA.php#clasiktest">Классификация тестов по приложению</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="right"></div>
+            </div>
+
+
+
+
+            <div class="row">
+                <div class="left"></div>
+                    <div class="center">
+                        <h1>Проект тестировщика ПО</h1>
+                        <table>
+                            <tbody><tr>
+                                <th>Мой проект</th>
+                                <th>Ссылка</th>
+                                <th>Тип</th>
+                            </tr>
+                            <tr>
+                                <td>PlayDay</td>
+                                <td>https://playday.lv/</td>
+                                <td>Web</td>
+                            </tr>
+                        </tbody></table>
+                        <h1>О проекте</h1>
+                        <img src="./QA_files/playday.png" alt="Фото1" title="playday" width="100%">
+                    </div>
+                <div class="right"></div>
+            </div>
+
+            <div class="row">
+                <div class="left"></div>
+                    <div class="center"></div>
+                <div class="right"></div>
+            </div>
+
+            <div class="row">
+                <div class="left"></div>
+                    <div class="center">
+                        <p>
+                            Play Day - самый большой комплекс в Латвии, оборудованный под активные развлечения
+                            для детей до 16 лет. Организация предлагает отдельные помещения для индивидуального
+                            празднования день рождений, услуги аниматоров и др. Также предлагаются
+                            индивидуальные и групповые занятия по танцам, спорту и др. Регулярно проходят
+                            организованные Play Day праздники, фестивали и др мероприятия в помещениях и
+                            на улице, куда приглашаются все желающие.
+                        </p>
+                        <h1 id="mindcard">MindCard PlayDay</h1>
+                            <img src="./QA_files/MindCard.png" alt="Фото1" title="playday" width="100%">
+                    </div>
+                <div class="right"></div>
+            </div>
+
+            <div class="row">
+                <div class="left"></div>
+                    <div class="center">
+                        <h1 id="sitechco">
+                            Чек-листы в Sitechco.ru
+                        </h1>
+                        <p>
+                            Чек-листы на разный функционал. Тестируем особенность приложения.
+                        </p>
+                        <img src="./QA_files/1.png" alt="Иллюстрация" width="100%">
+                        <img src="./QA_files/4.png" alt="Иллюстрация" width="100%">
+                        <img src="./QA_files/7.png" alt="Иллюстрация" width="100%">
+                    </div>
+                <div class="right"></div>
+            </div>
+
+            <div class="row">
+                <div class="left"></div>
+                    <div class="center">
+                            <h1 id="mantis">
+                                Тестируем Mantis Bug Tracker
+                            </h1>
+                            <p>
+                                Баги найденные на сайте Playday и оформлены в Mantis (Mantis Bug Tracker)
+                            </p>
+                        <img src="./QA_files/9.png" alt="Иллюстрация" width="100%">
+                        <img src="./QA_files/8.png" alt="Иллюстрация" width="100%">
+                        <img src="./QA_files/10.png" alt="Иллюстрация" width="100%">
+                        <img src="./QA_files/11.png" alt="Иллюстрация" width="100%">
+                        <img src="./QA_files/12.png" alt="Иллюстрация" width="100%">
+                    </div>
+                <div class="right"></div>
+            </div>
+            <div class="row">
+                <div class="left">
+                </div>
+                    <div class="center">
+                        <h1 id="bugzilla">
+                            Тестируем Bugzilla Bug Tracker
+                        </h1>
+                        <p>
+                            Баги найденны на сайте Playday и оформлены в Bugzilla
+                        </p>
+                        <img src="./QA_files/bug3.png" alt="Иллюстрация" width="100%">
+                    </div>
+                <div class="right"></div>
+            </div>
+
+            <div class="row">
+                <div class="left"></div>
+                    <div class="center">
+                        <h1 id="jira"> Добавляем баг в Jira</h1>
+                        <img src="./QA_files/11(1).png" alt="Иллюстрация" width="100%">
+                        <img src="./QA_files/10(1).png" alt="Иллюстрация" width="100%">
+                    </div>
+                <div class="right"></div>
+            </div>
+
+            <div class="row">
+                <div class="left">
+                </div>
+                    <div class="center">
+                        <h1 id="redmine">Оформляем баги в Redmine</h1>
+                        <img src="./QA_files/redmine1.png" alt="Иллюстрация" width="100%">
+                        <img src="./QA_files/redmine2.png" alt="Иллюстрация" width="100%">
+                        <p>Как должно быть:</p>
+                        <img src="./QA_files/1.jpg" alt="Иллюстрация" width="100%">
+                        <img src="./QA_files/redmine3.png" alt="Иллюстрация" width="100%">
+                    </div>
+                <div class="right"></div>
+            </div>
+
+            <div class="row">
+                <div class="left"></div>
+                    <div class="center">
+                        <h1 id="testlink">Тест кейсы в TestLink</h1>
+                        <img src="./QA_files/13.png" alt="Иллюстрация" width="100%">
+                        <img src="./QA_files/14.png" alt="Иллюстрация" width="100%">
+                    </div>
+                <div class="right"></div>
+            </div>
+
+            <div class="row">
+                <div class="left">
+                </div>
+                    <div class="center">
+                        <h1 id="transition"> State Transition Playday.lv</h1>
+                        <img src="./QA_files/9(1).png" alt="Иллюстрация" width="100%">
+                    </div>
+                <div class="right"></div>
+            </div>
+
+            <div class="row">
+                <div class="left"></div>
+                <div class="center">
+                    <h1 id="moneytour">Исследовательское тестирование: Денежный тур (Money Tour) Уиттакера на Playday.lv</h1>
+                    <p>
+                        Для своего проекта я выбрала Денежный тур, потому что это напрямую вяжется с целю создания сайта,
+                        где можно посмотреть и выбрать себе место для любого детского праздника.
+                    </p>
+                    <p>
+                        <b>Цель тура:</b> найти функции, которые заставляют людей тратить деньги на ваше ПО и проверить
+
+                        их работу.
+                    </p>
+                    <p>
+                        <b>Время тура:</b> 20 минут.
+                    </p>
+                    <p>
+                        <b>В путь!</b>
+                    </p>
+                    <p>
+                        Итак, нажав кнопку «О нас» мы перенесёмся в мини рассказ о том, что вас ждет в Playday.lv.
+                    </p>
+                    <img src="./QA_files/1(1).png" alt="Иллюстрация" width="100%">
+                    <p>
+                        С первых строк понятно, что здесь можно просто прийти поиграть, побегать, попрыгать,
+                        устроить частный детский праздник, посетить занятие в “Playschool” или записать ребёнка
+                        в дневной лагерь на каникулах.
+                    </p>
+                    <img src="./QA_files/2.png" alt="Иллюстрация" width="100%">
+                    <p>
+                        Листая дальше, мы сразу видим, какие услуги нам может предложить Playday.lv.
+                        Но здесь они показаны частично (нет даже и трети из всего разнообразия), но об этом
+                        мы узнаем только тогда, когда пройдём непосредственно по другим разделам.
+                    </p>
+                    <img src="./QA_files/3.png" alt="Иллюстрация" width="100%">
+                    <p>
+                        Изучая далее, мы узнаём информацию, что Playday.lv устраивает массовые семейные мероприятия,
+                        как на улице, так и у себя в помещениях.
+                    </p>
+                    <img src="./QA_files/4(1).png" alt="Иллюстрация" width="100%">
+                    <p>
+                        Переходим по кнопке «Предстоящие мероприятия» понимаем, что ссылка битая. Во-первых,
+                        сразу переключает тебя на латышский язык, а информация не отображается.
+                    </p>
+                    <img src="./QA_files/5.png" alt="Иллюстрация" width="100%">
+                    <p>
+                        Идём смотреть, что же мы можем зарезервировать. В выплывающем списке можем видеть
+                        пять игровых комнат. Названия комнат то написаны с маленькой буквы, то с большой.
+                        Смотрится некрасиво.
+                    </p>
+                    <img src="./QA_files/6.png" alt="Иллюстрация" width="100%">
+                    <p>
+                        В окне резервации опять появляется информация о центре.
+                    </p>
+                    <img src="./QA_files/7(1).png" alt="Иллюстрация" width="100%">
+                    <p>
+                        Если хочется посмотреть больше фото, то нужно нажать на кнопку “Больше фотографий”.
+                    </p>
+                    <img src="./QA_files/8(1).png" alt="Иллюстрация" width="100%">
+                    <p>
+                        После нажатия на кнопку появляется только ТРИ новые фотографии.
+                    </p>
+                    <img src="./QA_files/9(2).png" alt="Иллюстрация" width="100%">
+                    <p>
+                        После повторного нажатия, криво появляется ещё три.
+                    </p>
+                    <img src="./QA_files/10(2).png" alt="Иллюстрация" width="100%">
+                    <p>
+                        Нажимаем ещё раз и появляется последняя тройка и всё!
+                    </p>
+                    <img src="./QA_files/11(2).png" alt="Иллюстрация" width="100%">
+                    <p>
+                        Пробегаем по комнатам. Комнаты отличаются вместимостью от 12 до 25 человек,
+                        цветом стен и мебели, остальное в них стандарт – столы, стулья, вода, микроволновка,
+                        чайник, пресс для кофе, графины.
+                    </p>
+                    <img src="./QA_files/12(1).png" alt="Иллюстрация" width="100%">
+                    <p>
+                        В каждой комнате тоже можно посмотреть фото, но очень ограничено - 3-4 фотографии.
+                    </p>
+                    <img src="./QA_files/13(1).png" alt="Иллюстрация" width="100%">
+                    <p>
+                        В резервации же можно почитать отзывы родителей.
+                    </p>
+                    <img src="./QA_files/14(1).png" alt="Иллюстрация" width="100%">
+                    <p>
+                        Далее в меню “Услуги” кнопка не нажимается, но в выпадашке дублируются “Услуги”,
+                        нажимая на которые и выходим на общую страницу услуг. Здесь, скорее всего, забыли
+                        перевести на русский Services – услуги.
+                    </p>
+                    <img src="./QA_files/15.png" alt="Иллюстрация" width="100%">
+                    <p>
+                        Дополнительные к праздникам услуги сразу идут с расценками.
+                    </p>
+                    <img src="./QA_files/16.png" alt="Иллюстрация" width="100%">
+                    <p>
+                        Почему-то цену не поставили к Диско вечеринке, явно пропустили.
+                    </p>
+                    <img src="./QA_files/17.png" alt="Иллюстрация" width="100%">
+                    <p>
+                        Но нажав на активное название, все цены и описание есть. Но описание зачем-то два раза.
+                    </p>
+                    <img src="./QA_files/18.png" alt="Иллюстрация" width="100%">
+                    <p>
+                        Под описанием любой услуги, можно посмотреть небольшой перечень других услуг, перейти
+                        в которые можно нажав или на активное фото или название.
+                    </p>
+                    <img src="./QA_files/19.png" alt="Иллюстрация" width="100%">
+                    <p>
+                        То, что всё здесь покупается и продается свидетельствует Корзина (значок), который
+                        не меняет своего месторасположения, как бы мы не крутили курсором вверх или вниз.
+                    </p>
+                    <img src="./QA_files/20.png" alt="Иллюстрация" width="100%">
+                    <p>
+                        Помимо того, что корзина всегда с нами) В Разделе меню она же тоже есть.
+                    </p>
+                    <img src="./QA_files/21.png" alt="Иллюстрация" width="100%">
+                    <p>
+                        Чтобы туда положить всё желаемое, нет необходимости регистрироваться заранее.
+                        Заполняемся все поля только при оформлении заказа. Опять же оформление заказа,
+                        как и все активные кнопки доступны на латышском языке.
+                    </p>
+                    <img class="litlleimg" src="./QA_files/22.png" alt="Иллюстрация">
+                    <p>
+                        За последнюю минуту тура, ещё можно успеть пробежать по ценам. Цены вставлены
+                        в виде картинки и сразу кидается в глаза, что картинка маленького разрешения.
+                    </p>
+                    <img class="mediumimg" src="./QA_files/23.png" alt="Иллюстрация">
+                    <p>
+                        Выводы: подводя итоги тура можно сразу отметить, что тур помог по другому посмотреть на сайт.
+                        За эти 20 минут нашлось много недочетов, недоделок сайта.
+                        <br>
+                        1) Есть битые ссылки и даже целые страницы неотображаются.
+                        <br>
+                        2) У некоторых услуг не проставлены цены.
+                        <br>
+                        3) У основных продуктов на продажу мало визуальной информации, картинки с ценами плохого разрешения.
+                        <br>
+                        4) При переключении функций, прыгают языки.
+                        <br>
+                        5) Требуется поработать над тем, чтобы кнопки главного меню приобрели единый стиль и функциональность.
+                    </p>
+                </div>
+                <div class="right"></div>
+            </div>
+
+            <div class="row">
+                <div class="left"></div>
+                    <div class="center">
+                        <h1 id="users">Users — добавить задание сотруднику</h1>
+                        <h3>Задача</h3>
+
+                        <b>
+                            Выполнить тест-кейс «Добавить задание сотруднику».
+                        </b>
+                        <br>
+                        <b>
+                            Совпадает ли фактический результат с ожидаемым?
+                        </b>
+                        <p>
+                            <i>Комментарий</i>: На каждый шаг я написала <span class="gold">Ожидаемый результат</span> и
+                        <span class="golden">Фактический результат.</span>
+                        </p>
+                        <p>
+                            К общему результату я написала комментарии. Мне, как новичку, часто не хватало шагов и
+                            пояснений к шагам, хотелось всего более подробного.
+                        </p>
+
+                        <h5>Шаги</h5>
+                            <b>1. Перейти в раздел «Задачи» под менеджером — http://users.bugred.ru/tasks/index.html</b>
+
+                        <p class="gold">Ожидаемый результат:</p>
+                        <p>
+                            Перейти в раздел «Задачи» под менеджером — http://users.bugred.ru/tasks/index.html
+                        </p>
+                        <p class="golden">Фактический результат:</p>
+
+                        <ul>
+                            <li>Зайти на сайт http://users.bugred.ru/tasks/index.html</li>
+                            <li>Авторизоваться под менеджер manager@mail.ru / 1</li>
+                            <li>Найти и нажать на раздел «Задачи»</li>
+                        </ul>
+                        <img src="./QA_files/1(2).png" alt="Иллюстрация" width="100%">
+                        <b>2. Нажать кнопку «Добавить задачу»</b>
+                        <p class="gold">Ожидаемый результат:</p>
+                        <p>
+                            После нажатия на кнопку «Добавить задачу», откроется страница с полем для
+                             заполнения добавления задач.
+                        </p>
+                        <p class="golden">Фактический результат:</p>
+                        <p>
+                            Открылось поле для добавления задач.
+                         </p>
+                        <img src="./QA_files/2(1).png" alt="Иллюстрация" width="100%">
+                        <b>3. Заполнить поля:</b>
+
+                        <ul>
+                            <li>Название задачи — «Тест»</li>
+                            <li>Описание задачи — «Описание 1»</li>
+                            <li>Ответственный — Петя</li>
+                        </ul>
+
+                            <p class="gold">Ожидаемый результат:</p>
+                            <p>Все поля можно заполнить</p>
+                            <p class="golden">Фактический результат:</p>
+                            <p>Все поля заполнились соответствующим образом</p>
+                        <img src="./QA_files/3(1).png" alt="Иллюстрация" width="100%">
+                            <b>4. Нажать кнопку «Добавить задачу»</b>
+                            <p class="gold">Ожидаемый результат:</p>
+                            <p>Кнопка «Добавить задачу» сработала</p>
+                            <p class="golden">Фактический результат:</p>
+                            <p>Задача добавилась. Было 302 задачи, стало 303.</p>
+
+                        <img src="./QA_files/4(2).png" alt="Иллюстрация" width="100%">
+
+                            <b>5. Зайти в систему под Петей</b>
+                        <p class="golden">Фактический результат:</p>
+                        <p>Выйти из системы под логином Менеджер.
+                        Войти под «Петей».</p>
+                        <p class="gold">Ожидаемый результат:</p>
+                        <p>Зашли в систему под Петей</p>
+                        <u>Результат:</u>
+
+                        <p>1)	На главной странице слева от нашего имени теперь написано «33 заданий»
+
+                            <i>Комментарий: некорректно склоняется слово «заданий».</i>
+
+                        </p><p>Было 32 задания</p>
+                        <img src="./QA_files/5(1).png" alt="Иллюстрация" width="100%">
+                        <p>Стало 33 задания</p>
+                        <img src="./QA_files/6(1).png" alt="Иллюстрация" width="100%">
+                        <p>
+                            2) Если нажать на эту фразу, то попадаем в раздел заданий на вкладку «Текущие задачи».
+                        В таблице одно задание (или сколько было исходно заданий + 1) — «Тест», с пустым расписанием.
+                        И две кнопки:
+                        </p>
+                        <ul>
+                        <li>сделал</li>
+                        <li>продолбал</li>
+                        </ul>
+                        <p>
+                            <i>Комментарий</i>: Трудно было понять, что за «фраза» - не кнопка, не опция, а почему-то фраза.
+                        Всё остальное понятно и ок.
+                        </p>
+                        <img src="./QA_files/7(2).png" alt="Иллюстрация" width="100%">
+                        <p>
+                            3) Если нажать на число слева от фразы «1 задание» (количество уведомлений), то попадем на страницу
+                        «Все непрочитанные уведомления», а там в таблице верхняя строка будет такой:
+                        </p>
+                        <ul>
+                            <li>Дата — время создания задачи (когда мы выполнили пункт 4, то есть несколько минут назад)</li>
+                            <li>Уведомление — «Для вас создали задачу»</li>
+                            <li>Задача — «Тест»</li>
+                        </ul>
+                        <p>
+                            <i>Комментарий</i>: Опять присутствует мной непонятная «фраза», а всё остальное
+                            проверено и работает.
+                        </p>
+                        <img src="./QA_files/8(2).png" alt="Иллюстрация" width="100%">
+                    </div>
+                <div class="right"></div>
+            </div>
+
+            <div class="row">
+                <div class="left"></div>
+                    <div class="center">
+
+                        <h1 id="stul"> Тестируем стул!</h1>
+                        <p>
+                            "Вы прислали мне своё резюме и я дала тестовое задание — протестировать стул".
+                        </p>
+                        <p>
+                            <b>Ваши действия? Как будете исследовать продукт, когда он попадет к вам в руки?
+                                Накидайте проверки.</b>
+                        </p>
+                        <h1>Тестируемый продукт – теннисный судейский стул (вышка)</h1>
+                        <h4>Проверяем требования заказчика.</h4>
+                        <h3>Стул должен устойчиво стоять</h3>
+                        <p>
+                            Для этого собрала стул и шатала его. Шатала с разных сторон. Стул устоял.
+                        </p>
+                        <p>
+                            Поставила стул на прямую твёрдую поверхность, нагрузила мешками с песком весом с крупного
+                            мужчину(90-100 кг) и повторила действия с шатанием стула.
+                        </p>
+                        <p>
+                            Затем нагрузила мешками превышающими вес среднего мужчины в два раза, трясла и шатала.
+                            Стул устоял.
+                        </p>
+                        <p>
+                            Привязала верёвки со всех сторон за ножки и дёргала за них. Стул устоял.
+                        </p>
+                        <i>
+                            Проверено: Стул устойчиво стоит.
+                        </i>
+                        <h3>Судье там должно быть удобно сидеть на протяжении всего матча</h3>
+                        <p>
+                            Взяла сидение отдельно от металлической конструкции и испытывала на удобство и прочность.
+                            В течение недели в минуты отдыха сидела именно на нём.
+                        </p>
+                        <p>
+                            Проверила пластиковое сидение на ударостойкость. Закидывала его теннисными мячами и
+                            била рукоятками от ракеток. Сидение не пострадало.
+                        </p>
+                        <p>
+                            Проверила и то, что сзади сидение удерживается дополнительной перекладиной. Перекладина литая,
+                            прочная, от механических дёрганий и даже стояний на ней не прогнулась.
+                        </p>
+                        <i>
+                            Проверено: Сидение прочное, ударостойкое. Сидение удобное.
+                        </i>
+                        <h3>Судья должен видеть со стула всю площадку</h3>
+                        <p>
+                            Залезла на стул и посмотрели вокруг, с вышки просматривается весь корт.
+                        </p>
+                        <i>
+                            Проверено: С вышки можно увидеть весь теннисный корт.
+                        </i>
+                        <h3>Использоваться стул будет как в зале, так и на улице, для игры на травяных кортах</h3>
+                        <p>
+                            Проверила, не скользят ли ножки стула на разных поверхностях. Поставила стул на траву,
+                            тянула его и толкали. Полила траву водой и повторила действия.
+                        </p>
+                        <i>
+                            Проверено: Стул устоял, не скользил и не шатался.
+                        </i>
+                        <h3>Проверила стул на случай дождя</h3>
+                        <p>
+                            Присутствует антискользящее покрытие ступенек, ступеньки не скользили не в сухом состоянии, ни
+                            после того, как их полила водой.
+                        </p>
+                        <p>Также после поливания стула водой проверила, чтобы на вышке не оставалась вода. Вода сразу
+                            стекает по специальным лобкам.
+                        </p>
+                        <p>
+                            Проверила специальный зонтик от дождя. Воду не пропускает, не гнётся от ветра, не выгибается.
+                        </p>
+                        <h1>Итог</h1>
+                        <p>
+                            Стул прошёл тестирование, можно закупать партию.
+                        </p>
+                    </div>
+                <div class="right"></div>
+            </div>
+
+            <div class="row">
+                <div class="left"></div>
+                    <div class="center">
+                        <h1 id="poisk">
+                            Дана задача  по строке "Поиск"
+                        </h1>
+                        <h3>
+                            Есть система, в ней 100 строковых полей. Поиск должен работать только по 10 из них по ТЗ. Поиск
+                            регистронезависимый, работает только по полному совпадению
+                        </h3>
+                        <h5>Что делать</h5>
+                        <p>
+                            Проверить поиск — расскажите, как вы будете это делать? С каких тестов начнете? Сколько тестов надо
+                            провести?
+                        </p>
+                        <p>
+                            <i>Ответ:</i>
+                        </p><p>
+                            <b>Kак вы будете это делать?</b>
+                        </p>
+                        <p>
+                            Чтобы проверить поиск, сначала пройдёмся по конкретному заданию, ещё раз актуализируем,
+                             что необходимо тестировать и в какой мере. Зададим вопросы.
+                        </p>
+                        <p>
+                            По пунктам создадим  план тестирования. На каждый пункт будем создавать тест кейсы,
+                            в котором распишем шаги, нацеленные на получение результата.
+                        </p>
+                        <p>
+                            Вначале нам нужно проверить, что первые 10 полей сайта имеют поиск, а у остальных полей с
+                            11-100 поиск не работает. Впишем во все поля одинаковое слово - СЛОВО. В поиск забьём
+                             это слово и проверим, в скольких полях отразится СЛОВО.
+                        </p><p>
+                            <span class="gold">Фактический результат:</span>СЛОВО отразилось в 10 первых полях.
+                        </p>
+                        <p>
+                            Создадим тест кейс, для проверки регистронезависимости поиска.
+                        </p>
+                        <p>
+                            Применяем позитивное тестирование, где вводим слово с написанием только прописными буквами,
+                            а также негативное, где слово СлОвО, чередуя заглавную и прописную, забиваем в поиск и смотрим
+                            на результат.
+                        </p>
+                        <p><span class="gold">Фактический результат:</span> поиск находит слово СЛОВО независимо от того,
+                        в каком регистре оно вписано.
+                        </p>
+                        <p>
+                            Составим тест-кейс для того чтобы проверить, что поиск работает по полному совпадению.
+                        </p>
+                        <p>
+                            Для проверки необходимо взять одно слово из любой строки и проверить его на совпадения,
+                            сначала записав его целым, потом изменяя, убирая или добавляя в него символы и буквы. В итоге,
+                            должны придти к фактическому результату, где поиск работает только по полному совпадению.
+                        </p>
+                            <b>С каких тестов начнете?</b>
+                        <p>
+                            В первую очередь начнём с позитивного и негативного тестирования.
+                        </p>
+                        <b>Сколько тестов надо провести?</b>
+                        <p>
+                            Столько тестов, сколько необходимо, чтобы проверить, что поиск работает по ТЗ.
+                        </p>
+                    </div>
+                <div class="right"></div>
+            </div>
+        <div class="row">
+            <div class="left"></div>
+            <div class="center">
+                <h1 id="clasiktest">
+                    Классификация тестов по приложению
+                </h1>
+                <h2>Виды тестирования</h2>
+                <br>
+                <b>Функциональные тесты (Functional testing)</b>
+                <ul>
+                    <li>Забронировать комнату</li>
+                    <li>Проверить Поиск в разделе Новости</li>
+                </ul>
+                <br>
+                <b>Тесты производительности (Performance testing)</b>
+                <ul>
+                    <li>Определить количество пользователей, одновременно работающих с приложением</li>
+                </ul>
+                <br>
+                <b>Нагрузочные тесты (Load testing)</b>
+                <ul>
+                    <li>Сымитировать вход на сайт одновременно 5000 пользователей</li>
+                </ul>
+                <br>
+                <b>Тестирование надежности (Reliability testing)</b>
+                <ul>
+                    <li>Проверить, что сайт может работать под нагрузкой (посещение сайта меняется от 0 до 50 000
+                    посетителей) 5 дней подряд.</li>
+                </ul>
+                <br>
+                <b>Тестирование совместимости (Compatibility testing)</b>
+                <ul>
+                    <li>Проверить работу сайта на разных браузерах Google Chrome, Edge, Safari, Opera, Mozilla Firefox</li>
+                    <li>Проверить работу сайта на разных устройствах мобильное устройство (Android, IOS), Ноутбук,
+                        стационарный компьютер, планшет</li>
+                </ul>
+                <br>
+                <h2>Типы тестирования</h2>
+                <br>
+                <b>Позитивные</b>
+                <br>
+                <i>Функциональные</i>
+                <ul>
+                    <li>Оформить бронирование на Комнату «Персик»</li>
+                </ul>
+                <i>Нефункциональные</i>
+                <ul>
+                    <li>Проверить языковые аспекты</li>
+                </ul>
+                <br>
+                <b>Негативные</b>
+                <br>
+                <i>Функциональные</i>
+                <ul>
+                    <li>Ввод 78ОАСЧКОМ8.Б» в строку для ввода купонов на скидку</li>
+                </ul>
+                <i>Нефункциональные</i>
+                <ul>
+                    <li>Одновременный выбор одной даты и одного времени для бронирования одной и той же комнаты
+                        100 пользователями</li>
+                </ul>
+                <br>
+                <h2>Форматы тестирования</h2>
+                <br>
+                <b>Скриптовое тестирование (по тестам):</b> для каких (конкретно) частей продукта и в каких случаях
+                будет полезнее всего?
+                <ul>
+                    <li>Тестирование бронирования заказа</li>
+                    <li>Тестирование оформления заказа</li>
+                </ul>
+                <br>
+                <b>Исследовательское тестирование (свободным поиском):</b>
+                для каких частей продукта и в каких случаях будет полезнее всего?
+                <ul>
+                    <li>Тестирование интерфейса</li>
+                </ul>
+                <br>
+                <b>Автоматизированное тестирование:</b> для проверки какого функционала наиболее полезно?
+                Почему именно для него?
+                <ul>
+                    <li>Нагрузка на выбор дат и времени для бронирования комнат ( от скорости реакции сайта и
+                    надёжности этой системы зависит прибыль предприятия, поэтому необходимо автоматизировать процесс
+                    на регулярную проверку)
+                </li></ul>
+            </div>
+                        <div class="right">
+                        </div>
+    </div>
+
+            <footer class="footer">
+                <p>© 2021 Ilona Braim, по всем вопросам пишите по адресу anoli2004@inbox.lv</p>
+            </footer>
+
+</div></body></html>

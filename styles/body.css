@@ -120,19 +120,44 @@ body {
   font-size: 15px;
   color: #131313;
   margin-bottom: 15px;
+  height: 150px;
+  overflow: hidden;
 }
-.boxpage .col .item_tags {
+.boxpage .col .item_text ul {
+  margin-left: 20px;
+}
+.boxpage .col .item_text.item_text_hidden {
+  height: auto;
+}
+
+.show_more {
+  box-shadow: 5px 10px 10px grey;
+  transition: box-shadow 0.3s ease;
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(to right, #f5edd6 20%, #90fffc 80%);
+  border-radius: 20px;
+  color: black;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.show_more:hover {
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.item_tags_body {
   display: flex;
   flex-wrap: wrap;
+  margin: 0 10px 10px 20px;
+  padding: 0 5px 10px 5px;
 }
-.boxpage .col .item_tag {
+
+.item_tag_body {
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 400;
   color: darkorange;
-  margin: 0 10px 10px 0;
-}
-.boxpage .col .item:hover {
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+  margin: 0 5px 0px 0px;
 }
 
 .navbar {

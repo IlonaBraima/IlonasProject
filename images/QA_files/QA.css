@@ -74,21 +74,20 @@ a {
   padding: 10px;
   margin: 10px;
 }
+.boxpageqa .row .left {
+  padding: 1px;
+  width: 200px;
+  float: left;
+}
 .boxpageqa .row .center {
   width: calc(100% - 400px);
   float: left;
-  margin-left: 2%;
 }
 .boxpageqa .row .right {
-  width: 21%;
+  width: 200px;
   float: left;
-  margin-left: 2%;
-  padding: 10px 10px 10px 10px;
-  /* border-collapse: collapse; */
-  border-radius: 5%;
-  border-style: solid;
 }
-.boxpageqa .row .borderbody {
+.boxpageqa .row .right .borderbody {
   display: block;
   font: 20px/1.5 Lobster, cursive;
   text-align: center;
@@ -99,46 +98,46 @@ a {
   margin-right: 20px;
   padding: 5px;
 }
-.boxpageqa .row .borderbody .hiper {
+.boxpageqa .row .right .borderbody .hiper {
   color: black;
   text-decoration: none;
 }
-.boxpageqa .row .borderbody .hiper:hover {
+.boxpageqa .row .right .borderbody .hiper:hover {
   color: slategrey;
   background: honeydew;
   text-decoration: none;
 }
-.boxpageqa .row .borderbody .hiper:visited {
+.boxpageqa .row .right .borderbody .hiper:visited {
   color: grey;
 }
-.boxpageqa .gold {
+.boxpageqa .row .gold {
   color: gold;
 }
-.boxpageqa .golden {
+.boxpageqa .row .golden {
   color: goldenrod;
 }
-.boxpageqa:after {
+.boxpageqa .row:after {
   content: "";
   clear: both;
   display: table;
 }
-.boxpageqa h1 {
+.boxpageqa .row h1 {
   text-align: center;
   margin: 30px 0 30px 0;
   font-size: 50px;
   color: #3CA1D9;
 }
-.boxpageqa table {
+.boxpageqa .row table {
   border-style: ridge;
   box-sizing: content-box;
   width: 600px;
   text-align: center;
   margin: 0 auto;
 }
-.boxpageqa table th {
+.boxpageqa .row table th {
   border: 4px solid grey;
 }
-.boxpageqa table td {
+.boxpageqa .row table td {
   border: 4px solid grey;
 }
 

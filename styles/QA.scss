@@ -52,7 +52,10 @@ a {
 
 .icon:hover {
   box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
+
 }
+
+
 
 .boxpageqa {
   margin: 10px auto;
@@ -81,19 +84,25 @@ a {
     }
 
     .left {
-      padding: 1px;
-      width: 200px;
-      float: left;
+
     }
 
     .center {
       width: calc(100% - 400px);
       float: left;
+      margin-left: 2%;
     }
 
     .right {
-      width: 200px;
+
+      width: 21%;
       float: left;
+      margin-left: 2%;
+      padding: 10px 10px 10px 10px;
+      /* border-collapse: collapse; */
+      border-radius: 5%;
+      border-style: solid;
+    }
 
       .borderbody {
         display: block;
@@ -160,7 +169,7 @@ a {
       }
     }
   }
-}
+
 
 .fam {
   padding-left: 15px;

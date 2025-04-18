@@ -22,7 +22,7 @@ $iconResult = $conn->query($iconSelect);
     <link rel="stylesheet" href="styles/media.css" type="text/css">
 
 	<title>ILONA</title>
-
+<script src="https://code.jquery.com/jquery-3.6.3.js"></script>
 </head>
 <body>
 
@@ -349,7 +349,7 @@ $iconResult = $conn->query($iconSelect);
         </div>
     </div>
     <footer class="footer">
-        <p>© 2021 Ilona Braim, по всем вопросам пишите по адресу anoli2004@inbox.lv</p>
+        <p>© 2021 Ilona Braima, по всем вопросам пишите по адресу anoli2004@inbox.lv</p>
     </footer>
 </body>
 </html>
